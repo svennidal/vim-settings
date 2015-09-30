@@ -255,8 +255,8 @@ abbreviate sdebug /****************************** DEBUG ***********************/
 abbreviate ddebug /*************************** // DEBUG ***********************/
 
 abbreviate consl console.log('\n');
-abbreviate dddc console.log(chalk.yellow(
-abbreviate ddddata console.log(chalk.blue(JSON.stringify(data)));
+abbreviate ddc console.log(chalk.yellow(
+abbreviate dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));
 abbreviate testenv if(process.env.NODE_ENV == 'testing'){
 abbreviate testsend res.send(JSON.stringify(data));
 abbreviate testget data = JSON.parse(res.text);
