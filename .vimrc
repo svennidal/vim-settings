@@ -47,10 +47,14 @@ endif
 set laststatus=2
 set noshowmode
 let g:lightline = {
+      \ 'enable': { 'tabline': 0 },
       \ 'colorscheme': 'jellybeans',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'inactive': {
+      \   'left': [ [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component': {
       \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
@@ -72,6 +76,7 @@ function! LightLineFugitive()
   endif
   return ''
 endfunction
+
 
 " else all text pops one space to the right when adding the 100th line. I try
 " not to have more than 1000 lines in a file. But jumping letters at that
