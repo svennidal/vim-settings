@@ -280,8 +280,10 @@ abbreviate _then THEN(
 " I keep closing tabs accidentally. No use :x or :w followed by :q
 cabbrev wq w
 
+map <F12> !!date<CR>i // Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
+
 " to run build, build tests, test and run
-map <F12> :!./bin/buildAllTestRun.sh<CR>
+" map <F12> :!./bin/buildAllTestRun.sh<CR>
 " to build and run
-map <F6> :!./bin/buildRun.sh<CR>
+" map <F6> :!./bin/buildRun.sh<CR>
 
