@@ -259,7 +259,7 @@ abbreviate helloj System.out.println("Hello, world!");
 abbreviate sdebug /****************************** DEBUG ***********************/
 abbreviate ddebug /*************************** // DEBUG ***********************/
 
-abbreviate consl console.log('\n');
+abbreviate consl console.log(
 abbreviate ddc console.log(chalk.yellow(
 abbreviate dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));
 abbreviate testenv if(process.env.NODE_ENV == 'testing'){
@@ -281,6 +281,7 @@ abbreviate _then THEN(
 cabbrev wq w
 
 map <F12> !!date<CR>i // Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
+map <F6> !!date<CR>i // Copyright Svenni Dal - Sveinn Dal Bjornsson - <ESC>o<BS><BS><BS><ESC>
 
 " to run build, build tests, test and run
 " map <F12> :!./bin/buildAllTestRun.sh<CR>
