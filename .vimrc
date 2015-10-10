@@ -259,8 +259,9 @@ abbreviate helloj System.out.println("Hello, world!");
 abbreviate sdebug /****************************** DEBUG ***********************/
 abbreviate ddebug /*************************** // DEBUG ***********************/
 
-abbreviate consl console.log(
-abbreviate ddc console.log(chalk.yellow(
+abbreviate consl console.log();<Left><Left>
+abbreviate consld console.dir(, { colors: true});<ESC>18<Left>i
+abbreviate ddc console.log(chalk.yellow());<Left><Left><Left>
 abbreviate dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));
 abbreviate testenv if(process.env.NODE_ENV == 'testing'){
 abbreviate testsend res.send(JSON.stringify(data));
