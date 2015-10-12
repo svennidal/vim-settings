@@ -284,8 +284,22 @@ cabbrev wq w
 map <F12> !!date<CR>i // Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
 map <F6> !!date<CR>i // Copyright Svenni Dal - Sveinn Dal Bjornsson - <ESC>o<BS><BS><BS><ESC>
 
-" to run build, build tests, test and run
-" map <F12> :!./bin/buildAllTestRun.sh<CR>
-" to build and run
-" map <F6> :!./bin/buildRun.sh<CR>
-
+let mapleader="\<Space>"
+imap <Leader>a á
+imap <Leader>A Á
+imap <Leader>[ ð
+imap <Leader>{ Ð
+imap <Leader>e é
+imap <Leader>E É
+imap <Leader>i í
+imap <Leader>I Í
+imap <Leader>o ó
+imap <Leader>O Ó
+imap <Leader>u ú
+imap <Leader>U Ú
+imap <Leader>/ þ
+imap <Leader>? Þ
+imap <Leader>; æ
+imap <Leader>: Æ
+imap <Leader>- ö
+imap <Leader>_ Ö
