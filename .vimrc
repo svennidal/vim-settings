@@ -88,6 +88,8 @@ set background=dark "until we start to switch daytime/nighttime themes
 " a corsair to locate the cursor. The 81th character turns magenta
 set cursorline cursorcolumn colorcolumn=81 
 
+hi Lambda          ctermbg=NONE ctermfg=87 cterm=NONE
+match Lambda /=>/
 hi Normal          ctermbg=233  ctermfg=NONE    cterm=NONE
 
 hi Comment         ctermbg=NONE ctermfg=59     cterm=NONE
@@ -281,25 +283,25 @@ abbreviate _then THEN(
 " I keep closing tabs accidentally. No use :x or :w followed by :q
 cabbrev wq w
 
-map <F12> !!date<CR>i // Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
-map <F6> !!date<CR>i // Copyright Svenni Dal - Sveinn Dal Bjornsson - <ESC>o<BS><BS><BS><ESC>
+nmap <F12> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
+nmap <F6> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson - <ESC>o<BS><BS><BS><ESC>
 
-let mapleader="\<Space>"
-imap <Leader>a á
-imap <Leader>A Á
-imap <Leader>[ ð
-imap <Leader>{ Ð
-imap <Leader>e é
-imap <Leader>E É
-imap <Leader>i í
-imap <Leader>I Í
-imap <Leader>o ó
-imap <Leader>O Ó
-imap <Leader>u ú
-imap <Leader>U Ú
-imap <Leader>/ þ
-imap <Leader>? Þ
-imap <Leader>; æ
-imap <Leader>: Æ
-imap <Leader>- ö
-imap <Leader>_ Ö
+let mapleader="z"
+inoremap <Leader>a á
+inoremap <Leader>A Á
+inoremap <Leader>[ ð
+inoremap <Leader>{ Ð
+inoremap <Leader>e é
+inoremap <Leader>E É
+inoremap <Leader>i í
+inoremap <Leader>I Í
+inoremap <Leader>o ó
+inoremap <Leader>O Ó
+inoremap <Leader>u ú
+inoremap <Leader>U Ú
+inoremap <Leader>/ þ
+inoremap <Leader>? Þ
+inoremap <Leader>; æ
+inoremap <Leader>: Æ
+inoremap <Leader>- ö
+inoremap <Leader>_ Ö
