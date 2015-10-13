@@ -89,7 +89,6 @@ set background=dark "until we start to switch daytime/nighttime themes
 set cursorline cursorcolumn colorcolumn=81 
 
 hi Lambda          ctermbg=NONE ctermfg=87 cterm=NONE
-match Lambda /=>/
 hi Normal          ctermbg=233  ctermfg=NONE    cterm=NONE
 
 hi Comment         ctermbg=NONE ctermfg=59     cterm=NONE
@@ -233,6 +232,7 @@ set nohlsearch
 au BufNewFile,BufRead *.ejs set filetype=html
 autocmd Filetype ejs setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 
+au BufNewFile,BufRead *.js match Lambda /=>/
 " This is for the less syntax highlighting
 " au BufNewFile,BufRead *.less set filetype=css
 
@@ -286,6 +286,7 @@ cabbrev wq w
 nmap <F12> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
 nmap <F6> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson - <ESC>o<BS><BS><BS><ESC>
 
+set timeoutlen=100
 let mapleader="z"
 inoremap <Leader>a á
 inoremap <Leader>A Á
