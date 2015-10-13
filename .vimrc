@@ -232,7 +232,8 @@ set nohlsearch
 au BufNewFile,BufRead *.ejs set filetype=html
 autocmd Filetype ejs setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 
-au BufNewFile,BufRead *.js match Lambda /=>/
+"au BufNewFile,BufRead,BufWinEnter *.js set filetype=javascript
+au BufNewFile,BufRead,BufWinEnter *.js match Lambda /=>/
 " This is for the less syntax highlighting
 " au BufNewFile,BufRead *.less set filetype=css
 
