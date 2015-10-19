@@ -261,6 +261,8 @@ abbreviate hellojs console.log('Hello, world!');
 abbreviate helloj System.out.println("Hello, world!");
 abbreviate sdebug /****************************** DEBUG ***********************/
 abbreviate ddebug /*************************** // DEBUG ***********************/
+abbreviate conslcake console.log('        CAKE!!\n                              .,-=;//;-\n                 ,    ,=/+%$XH@MM#@:\n       -$##@+$###@H@MMM#######H:.    -/H#\n .,H@H@ X######@ -H#####@+-     -+H###@x\n  .,@##H;      +XM##M/,     =%@###@X;-\n X%-  :M##########$.    .:%M###@%:\n M##H,   +H@@@$/-.  ,;$M###@%,          -\n M###M=,,---,.-%%H####M$:           ,+@##\n @##################@/.          :%##@$-\n M################H,         ;HM##M$=\n ##################.    .=$M##M$=\n #################H..;XM##M$=         .:+\n M####################@%=          =+@MH%\n @#################M/.         =+H#X%=\n =+M###############M,     -/X#X+;.\n  .;XM###########H=    ,/X#H+:,\n     .=+HM#######M+/+HM@+=.\n          ,:/%XM####H/.\n               ,.:=-.');
+abbreviate conslbcake console.log(chalk.blue('        CAKE!!\n                              .,-=;//;-\n                 ,    ,=/+%$XH@MM#@:\n       -$##@+$###@H@MMM#######H:.    -/H#\n .,H@H@ X######@ -H#####@+-     -+H###@x\n  .,@##H;      +XM##M/,     =%@###@X;-\n X%-  :M##########$.    .:%M###@%:\n M##H,   +H@@@$/-.  ,;$M###@%,          -\n M###M=,,---,.-%%H####M$:           ,+@##\n @##################@/.          :%##@$-\n M################H,         ;HM##M$=\n ##################.    .=$M##M$=\n #################H..;XM##M$=         .:+\n M####################@%=          =+@MH%\n @#################M/.         =+H#X%=\n =+M###############M,     -/X#X+;.\n  .;XM###########H=    ,/X#H+:,\n     .=+HM#######M+/+HM@+=.\n          ,:/%XM####H/.\n               ,.:=-.'));
 
 abbreviate consl console.log();<Left><Left>
 abbreviate consld console.dir(, { colors: true});<ESC>18<Left>i
@@ -286,24 +288,3 @@ cabbrev wq w
 
 nmap <F12> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
 nmap <F6> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson - <ESC>o<BS><BS><BS><ESC>
-
-set timeoutlen=100
-let mapleader="z"
-inoremap <Leader>a á
-inoremap <Leader>A Á
-inoremap <Leader>[ ð
-inoremap <Leader>{ Ð
-inoremap <Leader>e é
-inoremap <Leader>E É
-inoremap <Leader>i í
-inoremap <Leader>I Í
-inoremap <Leader>o ó
-inoremap <Leader>O Ó
-inoremap <Leader>u ú
-inoremap <Leader>U Ú
-inoremap <Leader>/ þ
-inoremap <Leader>? Þ
-inoremap <Leader>; æ
-inoremap <Leader>: Æ
-inoremap <Leader>- ö
-inoremap <Leader>_ Ö
