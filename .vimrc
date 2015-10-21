@@ -106,10 +106,10 @@ hi String          ctermbg=NONE ctermfg=10     cterm=NONE
 hi Type            ctermbg=NONE ctermfg=11     cterm=NONE
 
 hi Cursor          ctermbg=NONE ctermfg=NONE   cterm=NONE
-hi CursorColumn    ctermbg=232	ctermfg=NONE   cterm=NONE
-hi CursorLine      ctermbg=232	ctermfg=NONE   cterm=NONE
+hi CursorColumn    ctermbg=16	ctermfg=NONE   cterm=NONE
+hi CursorLine      ctermbg=16	ctermfg=NONE   cterm=NONE
 hi ColorColumn     ctermbg=233  ctermfg=magenta   cterm=NONE
-hi SignColumn      ctermbg=233  ctermfg=250    cterm=NONE
+hi SignColumn      ctermbg=16   ctermfg=250    cterm=NONE
 
 hi Todo            ctermbg=NONE ctermfg=NONE   cterm=reverse
 hi Error           ctermbg=52   ctermfg=12     cterm=underline
@@ -264,8 +264,8 @@ abbreviate ddebug /*************************** // DEBUG ***********************/
 abbreviate conslcake console.log('        CAKE!!\n                              .,-=;//;-\n                 ,    ,=/+%$XH@MM#@:\n       -$##@+$###@H@MMM#######H:.    -/H#\n .,H@H@ X######@ -H#####@+-     -+H###@x\n  .,@##H;      +XM##M/,     =%@###@X;-\n X%-  :M##########$.    .:%M###@%:\n M##H,   +H@@@$/-.  ,;$M###@%,          -\n M###M=,,---,.-%%H####M$:           ,+@##\n @##################@/.          :%##@$-\n M################H,         ;HM##M$=\n ##################.    .=$M##M$=\n #################H..;XM##M$=         .:+\n M####################@%=          =+@MH%\n @#################M/.         =+H#X%=\n =+M###############M,     -/X#X+;.\n  .;XM###########H=    ,/X#H+:,\n     .=+HM#######M+/+HM@+=.\n          ,:/%XM####H/.\n               ,.:=-.');
 abbreviate conslbcake console.log(chalk.blue('        CAKE!!\n                              .,-=;//;-\n                 ,    ,=/+%$XH@MM#@:\n       -$##@+$###@H@MMM#######H:.    -/H#\n .,H@H@ X######@ -H#####@+-     -+H###@x\n  .,@##H;      +XM##M/,     =%@###@X;-\n X%-  :M##########$.    .:%M###@%:\n M##H,   +H@@@$/-.  ,;$M###@%,          -\n M###M=,,---,.-%%H####M$:           ,+@##\n @##################@/.          :%##@$-\n M################H,         ;HM##M$=\n ##################.    .=$M##M$=\n #################H..;XM##M$=         .:+\n M####################@%=          =+@MH%\n @#################M/.         =+H#X%=\n =+M###############M,     -/X#X+;.\n  .;XM###########H=    ,/X#H+:,\n     .=+HM#######M+/+HM@+=.\n          ,:/%XM####H/.\n               ,.:=-.'));
 
-abbreviate consl console.log();<Left><Left>
-abbreviate consld console.dir(, { colors: true});<ESC>18<Left>i
+abbreviate consl console.log);<Left><Left>
+abbreviate consld console.dir, { colors: true});<ESC>18<Left>i
 abbreviate ddc console.log(chalk.yellow());<Left><Left><Left>
 abbreviate dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));
 abbreviate testenv if(process.env.NODE_ENV == 'testing'){
