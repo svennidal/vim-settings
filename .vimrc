@@ -125,9 +125,9 @@ endfunction
 abbreviate sdbc // Copyright Svenni Dal - Sveinn Dal Bjornsson -
 abbreviate sdbkc // Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir -
 abbreviate htmlsdbc <!-- Copyright Svenni Dal - Sveinn Dal Bjornsson - -->
-abbreviate helloc std::cout << "Hello, world!\n";
-abbreviate hellojs console.log('Hello, world!');
-abbreviate helloj System.out.println("Hello, world!");
+abbreviate helloc std::cout << "Hello! Yes, this is dog!\n";
+abbreviate hellojs console.log('Hello! Yes, this is dog!');
+abbreviate helloj System.out.println("Hello! Yes, this is dog!");
 abbreviate sdebug /****************************** DEBUG ***********************/
 abbreviate ddebug /*************************** // DEBUG ***********************/
 abbreviate conslcake console.log('        CAKE!!\n                              .,-=;//;-\n                 ,    ,=/+%$XH@MM#@:\n       -$##@+$###@H@MMM#######H:.    -/H#\n .,H@H@ X######@ -H#####@+-     -+H###@x\n  .,@##H;      +XM##M/,     =%@###@X;-\n X%-  :M##########$.    .:%M###@%:\n M##H,   +H@@@$/-.  ,;$M###@%,          -\n M###M=,,---,.-%%H####M$:           ,+@##\n @##################@/.          :%##@$-\n M################H,         ;HM##M$=\n ##################.    .=$M##M$=\n #################H..;XM##M$=         .:+\n M####################@%=          =+@MH%\n @#################M/.         =+H#X%=\n =+M###############M,     -/X#X+;.\n  .;XM###########H=    ,/X#H+:,\n     .=+HM#######M+/+HM@+=.\n          ,:/%XM####H/.\n               ,.:=-.');
