@@ -133,24 +133,40 @@ abbreviate ddebug /*************************** // DEBUG ***********************/
 abbreviate conslcake console.log('        CAKE!!\n                              .,-=;//;-\n                 ,    ,=/+%$XH@MM#@:\n       -$##@+$###@H@MMM#######H:.    -/H#\n .,H@H@ X######@ -H#####@+-     -+H###@x\n  .,@##H;      +XM##M/,     =%@###@X;-\n X%-  :M##########$.    .:%M###@%:\n M##H,   +H@@@$/-.  ,;$M###@%,          -\n M###M=,,---,.-%%H####M$:           ,+@##\n @##################@/.          :%##@$-\n M################H,         ;HM##M$=\n ##################.    .=$M##M$=\n #################H..;XM##M$=         .:+\n M####################@%=          =+@MH%\n @#################M/.         =+H#X%=\n =+M###############M,     -/X#X+;.\n  .;XM###########H=    ,/X#H+:,\n     .=+HM#######M+/+HM@+=.\n          ,:/%XM####H/.\n               ,.:=-.');
 abbreviate conslbcake console.log(chalk.blue('        CAKE!!\n                              .,-=;//;-\n                 ,    ,=/+%$XH@MM#@:\n       -$##@+$###@H@MMM#######H:.    -/H#\n .,H@H@ X######@ -H#####@+-     -+H###@x\n  .,@##H;      +XM##M/,     =%@###@X;-\n X%-  :M##########$.    .:%M###@%:\n M##H,   +H@@@$/-.  ,;$M###@%,          -\n M###M=,,---,.-%%H####M$:           ,+@##\n @##################@/.          :%##@$-\n M################H,         ;HM##M$=\n ##################.    .=$M##M$=\n #################H..;XM##M$=         .:+\n M####################@%=          =+@MH%\n @#################M/.         =+H#X%=\n =+M###############M,     -/X#X+;.\n  .;XM###########H=    ,/X#H+:,\n     .=+HM#######M+/+HM@+=.\n          ,:/%XM####H/.\n               ,.:=-.'));
 
-abbreviate consl console.log);<Left><Left>
-abbreviate consld console.dir, { colors: true});<ESC>18<Left>i
-abbreviate ddc console.log(chalk.yellow());<Left><Left><Left>
-abbreviate dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));
-abbreviate testenv if(process.env.NODE_ENV == 'testing'){
-abbreviate testsend res.send(JSON.stringify(data));
-abbreviate testget data = JSON.parse(res.text);
-abbreviate ddata , { data: data});
+iabbrev usestrict 'use strict';
+iabbrev expp exports exports. = (req, res, next) => {<CR>};<ESC>kf.a<C-o>T<
+iabbrev consl console.log();<Left><Left><C-o>T<
+iabbrev consll console.log('');<Left><Left><Left><C-o>T<
+iabbrev consld console.dir(, { colors: true});<ESC>18<Left>i<C-o>T<
+iabbrev consldd console.dir('', { colors: true});<ESC>19<Left>i<C-o>T<
+iabbrev ddc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
+iabbrev ddcc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
+iabbrev dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));<ESC><C-o>T<
+iabbrev ddata , { data: data});
+iabbrev testenv if(process.env.NODE_ENV == 'testing'){
+iabbrev testsend res.send(JSON.stringify(data));
+iabbrev testget data = JSON.parse(res.text);
+iabbrev testitget it('', (done) => {<CR>user<CR>.get('<CR><BS><BS>.expect(200)<CR>.end((err, res) => {<CR>data = JSON.parse(res.text);<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>9kf'ashould <C-o>T<
+iabbrev testitpost it('', (done) => {<CR>user<CR>.post('<CR><BS><BS>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>8kf'ashould <C-o>T<
+iabbrev testdescribe describe('', () => {<CR><CR><CR><CR><CR><CR>});<ESC>6kf'awhen <C-o>T<
+iabbrev teststart const app = require('../app'),<CR>request = require('supertest'),<CR>should = require('should'),<CR>user = request.agent(app);<CR>let data;<CR><CR>describe('', () => {<CR><CR><CR><CR><CR><CR>});<ESC>6kf'awhen <C-o>T<
+iabbrev testinit it('should create an admin account and return 200', (done) => {<CR>request(app)<CR>.get('/init')<CR>.expect(200)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<CR>
+iabbrev testlogin it('should login the user and return 302', (done) => {<CR>user<CR>.post('/login')<CR>.send({ username: '', password: '' })<CR>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>6kf'a<C-o>T<
+iabbrev testlogout it('should logout the user and return 302', (done) => {<CR>user<CR>.get('/logout')<CR>.expect(302)<CR>.end((err, res) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});
+iabbrev testclean it('should login the user and return 302', (done) => {<CR>request(app)<CR>.get('/clean')<CR>.expect(200)<CR>.end((err, res) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>
 
 " catch cpp unit test
-abbreviate _test TEST_CASE(
-abbreviate _sect SECTION(
-abbreviate _requ REQUIRE(
-abbreviate _chec CHECK(
-abbreviate _scen SCENARIO(
-abbreviate _give GIVEN(
-abbreviate _when WHEN(
-abbreviate _then THEN(
+iabbrev _test TEST_CASE(
+iabbrev _sect SECTION(
+iabbrev _requ REQUIRE(
+iabbrev _chec CHECK(
+iabbrev _scen SCENARIO(
+iabbrev _give GIVEN(
+iabbrev _when WHEN(
+iabbrev _then THEN(
+
+iabbrev findsjavar Restaurant.findOne({ 'name': 'Sjavarpakkhusid' }, (err, Rest) => {<CR>if(err){ console.log(err); }<CR>else {
+iabbrev updatesjavar restModule.update(Rest);
 
 " I keep closing tabs accidentally. No use :x or :w followed by :q
 cabbrev wq w
