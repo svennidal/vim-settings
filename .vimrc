@@ -78,6 +78,7 @@ function! LightLineFugitive()
 endfunction
 
 
+syntax match Lambda /=>/ contained
 " else all text pops one space to the right when adding the 100th line. I try
 " not to have more than 1000 lines in a file. But jumping letters at that
 " moment would not be favorable
@@ -88,6 +89,7 @@ set background=dark "until we start to switch daytime/nighttime themes
 " a corsair to locate the cursor. The 81th character turns magenta
 set cursorline cursorcolumn colorcolumn=81 
 hi Lambda          ctermbg=NONE ctermfg=87 cterm=NONE
+hi Commento          ctermbg=NONE ctermfg=141 cterm=NONE
 hi ColorColumn     ctermbg=233  ctermfg=magenta   cterm=NONE
 colorscheme spacegray
 
@@ -101,8 +103,10 @@ set nohlsearch
 au BufNewFile,BufRead *.ejs set filetype=html
 autocmd Filetype ejs setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 
-"au BufNewFile,BufRead,BufWinEnter *.js set filetype=javascript
-au BufNewFile,BufRead,BufWinEnter *.js match Lambda /=>/
+au BufNewFile,BufRead,BufWinEnter *.js syn match Commento /\/\*\*.*\*\// | syn match Lambda /=>/
+" au BufNewFile,BufRead,BufWinEnter *.js match Commento /\/\*\*.*\*\// 
+" au BufNewFile,BufRead,BufWinEnter *.js match Lambda /=>/
+" au BufNewFile,BufRead,BufWinEnter *.js set filetype=javascript
 " This is for the less syntax highlighting
 " au BufNewFile,BufRead *.less set filetype=css
 
@@ -134,14 +138,14 @@ abbreviate conslcake console.log('        CAKE!!\n                              
 abbreviate conslbcake console.log(chalk.blue('        CAKE!!\n                              .,-=;//;-\n                 ,    ,=/+%$XH@MM#@:\n       -$##@+$###@H@MMM#######H:.    -/H#\n .,H@H@ X######@ -H#####@+-     -+H###@x\n  .,@##H;      +XM##M/,     =%@###@X;-\n X%-  :M##########$.    .:%M###@%:\n M##H,   +H@@@$/-.  ,;$M###@%,          -\n M###M=,,---,.-%%H####M$:           ,+@##\n @##################@/.          :%##@$-\n M################H,         ;HM##M$=\n ##################.    .=$M##M$=\n #################H..;XM##M$=         .:+\n M####################@%=          =+@MH%\n @#################M/.         =+H#X%=\n =+M###############M,     -/X#X+;.\n  .;XM###########H=    ,/X#H+:,\n     .=+HM#######M+/+HM@+=.\n          ,:/%XM####H/.\n               ,.:=-.'));
 
 iabbrev usestrict 'use strict';
-iabbrev expp exports exports. = (req, res, next) => {<CR>};<ESC>kf.a<C-o>T<
+iabbrev expp exports. = (req, res, next) => {<CR>};<ESC>kf.a<C-o>T<
 iabbrev consl console.log();<Left><Left><C-o>T<
 iabbrev consll console.log('');<Left><Left><Left><C-o>T<
 iabbrev consld console.dir(, { colors: true});<ESC>18<Left>i<C-o>T<
 iabbrev consldd console.dir('', { colors: true});<ESC>19<Left>i<C-o>T<
 iabbrev ddc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev ddcc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
-iabbrev dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));<ESC><C-o>T<
+iabbrev dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));<ESC>
 iabbrev ddata , { data: data});
 iabbrev testenv if(process.env.NODE_ENV == 'testing'){
 iabbrev testsend res.send(JSON.stringify(data));
