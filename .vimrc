@@ -146,9 +146,13 @@ iabbrev consldd console.dir('', { colors: true});<ESC>19<Left>i<C-o>T<
 iabbrev ddc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev ddcc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));<ESC>
-iabbrev ddata , { data: data});
-iabbrev testenv if(process.env.NODE_ENV == 'testing'){
+iabbrev ddata , { data: data });
+iabbrev mongoerr /* istanbul ignore if */<CR>if(err){ console.log(err); }<CR>else {
+iabbrev istanif /* istanbul ignore if */
+iabbrev istanelse /* istanbul ignore else */
+iabbrev testenv /* istanbul ignore else */<CR>if(process.env.NODE_ENV == 'testing'){
 iabbrev testsend res.send(JSON.stringify(data));
+iabbrev testelse } else {<CR>res.render('<C-o>T<
 iabbrev testget data = JSON.parse(res.text);
 iabbrev testitget it('', (done) => {<CR>user<CR>.get('<CR><BS><BS>.expect(200)<CR>.end((err, res) => {<CR>data = JSON.parse(res.text);<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>9kf'ashould <C-o>T<
 iabbrev testitpost it('', (done) => {<CR>user<CR>.post('<CR><BS><BS>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>8kf'ashould <C-o>T<
