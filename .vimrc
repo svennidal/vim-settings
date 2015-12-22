@@ -117,6 +117,8 @@ autocmd Filetype jade setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 autocmd Filetype css setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
+autocmd BufRead,BufNewFile *.swift set filetype=swift
+autocmd Filetype swift setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 
 " 4 spaces for indentation? Hell no. Not even 2. Use tabs.
 function SvenniStandard()
@@ -132,6 +134,7 @@ abbreviate htmlsdbc <!-- Copyright Svenni Dal - Sveinn Dal Bjornsson - -->
 abbreviate helloc std::cout << "Hello! Yes, this is dog!\n";
 abbreviate hellojs console.log('Hello! Yes, this is dog!');
 abbreviate helloj System.out.println("Hello! Yes, this is dog!");
+abbreviate hellos print("Hello! Yes, this is dog!")
 abbreviate sdebug /****************************** DEBUG ***********************/
 abbreviate ddebug /*************************** // DEBUG ***********************/
 abbreviate conslcake console.log('        CAKE!!\n                              .,-=;//;-\n                 ,    ,=/+%$XH@MM#@:\n       -$##@+$###@H@MMM#######H:.    -/H#\n .,H@H@ X######@ -H#####@+-     -+H###@x\n  .,@##H;      +XM##M/,     =%@###@X;-\n X%-  :M##########$.    .:%M###@%:\n M##H,   +H@@@$/-.  ,;$M###@%,          -\n M###M=,,---,.-%%H####M$:           ,+@##\n @##################@/.          :%##@$-\n M################H,         ;HM##M$=\n ##################.    .=$M##M$=\n #################H..;XM##M$=         .:+\n M####################@%=          =+@MH%\n @#################M/.         =+H#X%=\n =+M###############M,     -/X#X+;.\n  .;XM###########H=    ,/X#H+:,\n     .=+HM#######M+/+HM@+=.\n          ,:/%XM####H/.\n               ,.:=-.');
@@ -140,9 +143,9 @@ abbreviate conslbcake console.log(chalk.blue('        CAKE!!\n                  
 iabbrev usestrict 'use strict';
 iabbrev expp exports. = (req, res, next) => {<CR>};<ESC>kf.a<C-o>T<
 iabbrev consl console.log();<Left><Left><C-o>T<
-iabbrev consll console.log('');<Left><Left><Left><C-o>T<
+iabbrev consll console.log(');<Left><Left><C-o>T<
 iabbrev consld console.dir(, { colors: true});<ESC>18<Left>i<C-o>T<
-iabbrev consldd console.dir('', { colors: true});<ESC>19<Left>i<C-o>T<
+iabbrev consldd console.dir(', { colors: true});<ESC>18<Left>i<C-o>T<
 iabbrev ddc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev ddcc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));<ESC>
@@ -157,7 +160,7 @@ iabbrev testget data = JSON.parse(res.text);
 iabbrev testitget it('', (done) => {<CR>user<CR>.get('<CR><BS><BS>.expect(200)<CR>.end((err, res) => {<CR>data = JSON.parse(res.text);<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>9kf'ashould <C-o>T<
 iabbrev testitpost it('', (done) => {<CR>user<CR>.post('<CR><BS><BS>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>8kf'ashould <C-o>T<
 iabbrev testdescribe describe('', () => {<CR><CR><CR><CR><CR><CR>});<ESC>6kf'awhen <C-o>T<
-iabbrev teststart const app = require('../app'),<CR>request = require('supertest'),<CR>should = require('should'),<CR>user = request.agent(app);<CR>let data;<CR><CR>describe('', () => {<CR><CR><CR><CR><CR><CR>});<ESC>6kf'awhen <C-o>T<
+iabbrev teststart 'use strict';<CR>const app = require('../app'),<CR>request = require('supertest'),<CR>should = require('should'),<CR>user = request.agent(app);<CR>let data;<CR><CR>describe('', () => {<CR><CR><CR><CR><CR><CR>});<ESC>6kf'awhen <C-o>T<
 iabbrev testinit it('should create an admin account and return 200', (done) => {<CR>request(app)<CR>.get('/init')<CR>.expect(200)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<CR>
 iabbrev testlogin it('should login the user and return 302', (done) => {<CR>user<CR>.post('/login')<CR>.send({ username: '', password: '' })<CR>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>6kf'a<C-o>T<
 iabbrev testlogout it('should logout the user and return 302', (done) => {<CR>user<CR>.get('/logout')<CR>.expect(302)<CR>.end((err, res) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});
@@ -181,3 +184,7 @@ cabbrev wq w
 
 nmap <F12> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
 nmap <F6> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson - <ESC>o<BS><BS><BS><ESC>
+nmap <F7> :!node %<CR>
+nmap <F8> :!cat % \| pbcopy <CR>
+nmap <F9> :!pandoc -s -o temp.html % && open temp.html <CR>
+nmap <F10> :!open %<CR>
