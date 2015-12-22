@@ -182,8 +182,8 @@ iabbrev updatesjavar restModule.update(Rest);
 " I keep closing tabs accidentally. No use :x or :w followed by :q
 cabbrev wq w
 
-nmap <F12> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
-nmap <F6> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson - <ESC>o<BS><BS><BS><ESC>
+nmap <F6> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
+nmap <F12> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson - <ESC>o<BS><BS><BS><ESC>
 nmap <F7> :!node %<CR>
 nmap <F8> :!cat % \| pbcopy <CR>
 nmap <F9> :!pandoc -s -o temp.html % && open temp.html <CR>
