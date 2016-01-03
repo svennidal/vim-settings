@@ -131,18 +131,19 @@ endfunction
 abbreviate sdbc // Copyright Svenni Dal - Sveinn Dal Bjornsson -
 abbreviate sdbkc // Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir -
 abbreviate htmlsdbc <!-- Copyright Svenni Dal - Sveinn Dal Bjornsson - -->
+" print("Hello! Yes, this is dog!")
 abbreviate helloc std::cout << "Hello! Yes, this is dog!\n";
 abbreviate hellojs console.log('Hello! Yes, this is dog!');
 abbreviate helloj System.out.println("Hello! Yes, this is dog!");
 abbreviate hellos print("Hello! Yes, this is dog!")
 abbreviate hellodog 'Hello! Yes, this is dog!'
+" debug
 abbreviate sdebug /****************************** DEBUG ***********************/
 abbreviate ddebug /*************************** // DEBUG ***********************/
 abbreviate conslcake console.log('        CAKE!!\n                              .,-=;//;-\n                 ,    ,=/+%$XH@MM#@:\n       -$##@+$###@H@MMM#######H:.    -/H#\n .,H@H@ X######@ -H#####@+-     -+H###@x\n  .,@##H;      +XM##M/,     =%@###@X;-\n X%-  :M##########$.    .:%M###@%:\n M##H,   +H@@@$/-.  ,;$M###@%,          -\n M###M=,,---,.-%%H####M$:           ,+@##\n @##################@/.          :%##@$-\n M################H,         ;HM##M$=\n ##################.    .=$M##M$=\n #################H..;XM##M$=         .:+\n M####################@%=          =+@MH%\n @#################M/.         =+H#X%=\n =+M###############M,     -/X#X+;.\n  .;XM###########H=    ,/X#H+:,\n     .=+HM#######M+/+HM@+=.\n          ,:/%XM####H/.\n               ,.:=-.');
 abbreviate conslbcake console.log(chalk.blue('        CAKE!!\n                              .,-=;//;-\n                 ,    ,=/+%$XH@MM#@:\n       -$##@+$###@H@MMM#######H:.    -/H#\n .,H@H@ X######@ -H#####@+-     -+H###@x\n  .,@##H;      +XM##M/,     =%@###@X;-\n X%-  :M##########$.    .:%M###@%:\n M##H,   +H@@@$/-.  ,;$M###@%,          -\n M###M=,,---,.-%%H####M$:           ,+@##\n @##################@/.          :%##@$-\n M################H,         ;HM##M$=\n ##################.    .=$M##M$=\n #################H..;XM##M$=         .:+\n M####################@%=          =+@MH%\n @#################M/.         =+H#X%=\n =+M###############M,     -/X#X+;.\n  .;XM###########H=    ,/X#H+:,\n     .=+HM#######M+/+HM@+=.\n          ,:/%XM####H/.\n               ,.:=-.'));
-
-iabbrev usestrict 'use strict';
-iabbrev expp exports. = (req, res, next) => {<CR>};<ESC>kf.a<C-o>T<
+" javascript
+" console logging
 iabbrev consl console.log();<Left><Left><C-o>T<
 iabbrev consll console.log(');<Left><Left><C-o>T<
 iabbrev consld console.dir(, { colors: true});<ESC>18<Left>i<C-o>T<
@@ -150,13 +151,24 @@ iabbrev consldd console.dir(', { colors: true});<ESC>18<Left>i<C-o>T<
 iabbrev ddc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev ddcc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));<ESC>
+" common stuff
+iabbrev usestrict 'use strict';
+iabbrev expp exports. = (req, res, next) => {<CR>};<ESC>kf.a<C-o>T<
+iabbrev forl for(let i = 0; i ; i++){<ESC>7<Left>i<C-o>T<
+iabbrev forll for(let i = 0; i ; i--){<ESC>7<Left>i<C-o>T<
 iabbrev ddata , { data: data });
 iabbrev mongoerr /* istanbul ignore if */<CR>if(err){ console.log(err); }<CR>else {
 iabbrev istanif /* istanbul ignore if */
 iabbrev istanelse /* istanbul ignore else */
+iabbrev routesindex 'use strict';<CR>const express = require('express'),<CR>fs = require('fs'),<CR>router = express.Router();<CR><CR>module.exports = (passport) =>{<CR>fs.readdirSync(__dirname).forEach((file) => {<CR>if(file === 'index.js' \|\| file.substr(file.lastIndexOf('.') + 1) !== 'js'){<CR>return;<CR>}<CR>let name = file.substr(0, file.indexOf('.'));<CR>require('./' + name)(router, passport);<CR>});<CR><CR>return router;<CR>};<ESC>
+iabbrev routesroute 'use strict';<CR>const isAuthenticated = (req, res, next) =>  {<CR>if (req.isAuthenticated()){ return next(); }<CR>res.redirect('/login');<CR>};<CR><CR>module.exports = (router, passport) =>{<CR>};<ESC>O<C-o>T<
+iabbrev modell 'use strict';<CR>const mongoose = require('mongoose'),<CR>Schema = mongoose.Schema;<CR><CR>const = new Schema({<CR>});<CR><CR>module.exports = mongoose.model('', );<ESC>3k0ea<SPACE><C-o>T<
+
+" testing dev
 iabbrev testenv /* istanbul ignore else */<CR>if(process.env.NODE_ENV == 'testing'){
 iabbrev testsend res.send(JSON.stringify(data));
 iabbrev testelse } else {<CR>res.render('<C-o>T<
+" testing test
 iabbrev testget data = JSON.parse(res.text);
 iabbrev testitget it('', (done) => {<CR>user<CR>.get('<CR><BS><BS>.expect(200)<CR>.end((err, res) => {<CR>data = JSON.parse(res.text);<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>9kf'ashould <C-o>T<
 iabbrev testitpost it('', (done) => {<CR>user<CR>.post('<CR><BS><BS>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>8kf'ashould <C-o>T<
