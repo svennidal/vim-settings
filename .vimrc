@@ -154,8 +154,8 @@ iabbrev dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));<ESC>
 " common stuff
 iabbrev usestrict 'use strict';
 iabbrev expp exports. = (req, res, next) => {<CR>};<ESC>kf.a<C-o>T<
-iabbrev forl for(let i = 0; i ; i++){<ESC>7<Left>i<C-o>T<
-iabbrev forll for(let i = 0; i ; i--){<ESC>7<Left>i<C-o>T<
+iabbrev forl for(let i = 0; i ; i++){<ESC>6<Left>i<C-o>T<
+iabbrev forll for(let i = ; i > 0; i--){<ESC>13<Left>i<C-o>T<
 iabbrev ddata , { data: data });
 iabbrev mongoerr /* istanbul ignore if */<CR>if(err){ console.log(err); }<CR>else {
 iabbrev istanif /* istanbul ignore if */
@@ -197,6 +197,7 @@ cabbrev wq w
 
 nmap <F6> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
 nmap <F12> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson - <ESC>o<BS><BS><BS><ESC>
+nmap <F2> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson - <ESC>o><BS><ESC>
 nmap <F7> :!node %<CR>
 nmap <F8> :!cat % \| pbcopy <CR>
 nmap <F9> :!pandoc -s -o temp.html % && open temp.html <CR>
