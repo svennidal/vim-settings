@@ -163,6 +163,9 @@ iabbrev istanelse /* istanbul ignore else */
 iabbrev routesindex 'use strict';<CR>const express = require('express'),<CR>fs = require('fs'),<CR>router = express.Router();<CR><CR>module.exports = (passport) =>{<CR>fs.readdirSync(__dirname).forEach((file) => {<CR>if(file === 'index.js' \|\| file.substr(file.lastIndexOf('.') + 1) !== 'js'){<CR>return;<CR>}<CR>let name = file.substr(0, file.indexOf('.'));<CR>require('./' + name)(router, passport);<CR>});<CR><CR>return router;<CR>};<ESC>
 iabbrev routesroute 'use strict';<CR>const isAuthenticated = (req, res, next) =>  {<CR>if (req.isAuthenticated()){ return next(); }<CR>res.redirect('/login');<CR>};<CR><CR>module.exports = (router, passport) =>{<CR>};<ESC>O<C-o>T<
 iabbrev modell 'use strict';<CR>const mongoose = require('mongoose'),<CR>Schema = mongoose.Schema;<CR><CR>const = new Schema({<CR>});<CR><CR>module.exports = mongoose.model('', );<ESC>3k0ea<SPACE><C-o>T<
+iabbrev typestring { type: String, default: '' },
+iabbrev reqb req.body.<C-o>T<
+iabbrev reqp req.params.<C-o>T<
 
 " testing dev
 iabbrev testenv /* istanbul ignore else */<CR>if(process.env.NODE_ENV == 'testing'){
@@ -192,12 +195,14 @@ iabbrev _then THEN(
 iabbrev findsjavar Restaurant.findOne({ 'name': 'Sjavarpakkhusid' }, (err, Rest) => {<CR>if(err){ console.log(err); }<CR>else {
 iabbrev updatesjavar restModule.update(Rest);
 
+iabbrev kvesve Kveðja,<CR>Svenni Dal<CR><CR>svennidal@jokula.is<CR>+3548231066
+
 " I keep closing tabs accidentally. No use :x or :w followed by :q
 cabbrev wq w
 
 nmap <F6> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
-nmap <F12> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson - <ESC>o<BS><BS><BS><ESC>
-nmap <F2> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson - <ESC>o><BS><ESC>
+nmap <F12> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson), All rights reserved<ESC>o<BS><BS><BS><ESC>
+nmap <F2> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson), All rights reserved<ESC>o><BS><ESC>
 nmap <F7> :!node %<CR>
 nmap <F8> :!cat % \| pbcopy <CR>
 nmap <F9> :!pandoc -s -o temp.html % && open temp.html <CR>
