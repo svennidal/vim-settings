@@ -150,10 +150,10 @@ iabbrev consld console.dir(, { colors: true});<ESC>18<Left>i<C-o>T<
 iabbrev consldd console.dir(', { colors: true});<ESC>18<Left>i<C-o>T<
 iabbrev ddc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev ddcc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
-iabbrev dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));<ESC>
+iabbrev dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));<ESC><C-o>T<
 " common stuff
 iabbrev usestrict 'use strict';
-iabbrev expp exports. = (req, res, next) => {<CR>};<ESC>kf.a<C-o>T<
+iabbrev expp exports. = (req, res, next) => {<ESC>0f.a<C-o>T<
 iabbrev forl for(let i = 0; i ; i++){<ESC>6<Left>i<C-o>T<
 iabbrev forll for(let i = ; i > 0; i--){<ESC>13<Left>i<C-o>T<
 iabbrev ddata , { data: data });
@@ -161,8 +161,9 @@ iabbrev mongoerr /* istanbul ignore if */<CR>if(err){ console.log(err); }<CR>els
 iabbrev istanif /* istanbul ignore if */
 iabbrev istanelse /* istanbul ignore else */
 iabbrev routesindex 'use strict';<CR>const express = require('express'),<CR>fs = require('fs'),<CR>router = express.Router();<CR><CR>module.exports = (passport) =>{<CR>fs.readdirSync(__dirname).forEach((file) => {<CR>if(file === 'index.js' \|\| file.substr(file.lastIndexOf('.') + 1) !== 'js'){<CR>return;<CR>}<CR>let name = file.substr(0, file.indexOf('.'));<CR>require('./' + name)(router, passport);<CR>});<CR><CR>return router;<CR>};<ESC>
-iabbrev routesroute 'use strict';<CR>const isAuthenticated = (req, res, next) =>  {<CR>if (req.isAuthenticated()){ return next(); }<CR>res.redirect('/login');<CR>};<CR><CR>module.exports = (router, passport) =>{<CR>};<ESC>O<C-o>T<
+iabbrev routesroute 'use strict';<CR>const isAuthenticated = (req, res, next) =>  {<CR>if (req.isAuthenticated()){ return next(); }<CR>res.redirect('/login');<CR>};<CR><CR>module.exports = (router, passport) =>{<CR>};<ESC>Orouter.<C-o>T<
 iabbrev modell 'use strict';<CR>const mongoose = require('mongoose'),<CR>Schema = mongoose.Schema;<CR><CR>const = new Schema({<CR>});<CR><CR>module.exports = mongoose.model('', );<ESC>3k0ea<SPACE><C-o>T<
+iabbrev modull 'use strict';<CR>const Mmm = require('../models/mmm');<CR><CR>exports.get = (data) => {<CR>return new Promise((resolve, reject) => {<CR>Mmm.find((err, mmm) => {<CR>if(err){ reject('failed getting mmm.'); }<CR>else {<CR>data.mmm = mmm;<CR>resolve(data);<CR>}<CR>});<CR>});<CR>};<ESC>gg
 iabbrev typestring { type: String, default: '' },
 iabbrev reqb req.body.<C-o>T<
 iabbrev reqp req.params.<C-o>T<
