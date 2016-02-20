@@ -201,6 +201,7 @@ iabbrev kvesve Kveðja,<CR>Svenni Dal<CR><CR>svennidal@jokula.is<CR>+3548231066
 " I keep closing tabs accidentally. No use :x or :w followed by :q
 cabbrev wq w
 
+nmap zz zz20<C-e>
 nmap <F6> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
 nmap <F12> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson), All rights reserved<ESC>o<BS><BS><BS><ESC>
 nmap <F2> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson), All rights reserved<ESC>o><BS><ESC>
