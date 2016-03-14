@@ -202,14 +202,14 @@ iabbrev kvesve Kveðja,<CR>Svenni Dal<CR><CR>svennidal@jokula.is<CR>+3548231066
 cabbrev wq w
 
 nmap zz zz20<C-e>
-nmap <F2> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson) & //JÖKULÁ, All rights reserved<ESC>o><BS><ESC>
+nmap <F2> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson) & //JÖKULÁ, All rights reserved <ESC>o><BS><ESC>
 nmap <F3> :!cat %<CR>
 nmap <F4> ggVGg?
-nmap <F5> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson), All rights reserved<ESC>o><BS><ESC>
+nmap <F5> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson), All rights reserved <ESC>o><BS><ESC>
 " nmap <F6> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
-nmap <F6> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson), All rights reserved<ESC>o<BS><BS><BS><ESC>
+nmap <F6> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson), All rights reserved <ESC>o<BS><BS><BS><ESC>
 nmap <F7> :!node %<CR>
 nmap <F8> :!cat % \| pbcopy <CR>
 nmap <F9> :!pandoc -s -o temp.html % && open temp.html <CR>
 nmap <F10> :!open %<CR>
-nmap <F12> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson) & //JÖKULÁ, All rights reserved<ESC>o<BS><BS><BS><ESC>
+nmap <F12> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson) & //JÖKULÁ, All rights reserved <ESC>o<BS><BS><BS><ESC>
