@@ -213,3 +213,8 @@ nmap <F8> :!cat % \| pbcopy <CR>
 nmap <F9> :!pandoc -s -o temp.html % && open temp.html <CR>
 nmap <F10> :!open %<CR>
 nmap <F12> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson) & //JÖKULÁ, All rights reserved <ESC>o<BS><BS><BS><ESC>
+
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+nnoremap <Up> :resize -2<CR>
+nnoremap <Down> :resize +2<CR>
