@@ -146,16 +146,16 @@ abbreviate conslbcake console.log(chalk.blue('        CAKE!!\n                  
 " console logging
 iabbrev consl console.log();<Left><Left><C-o>T<
 iabbrev consll console.log(');<Left><Left><C-o>T<
-iabbrev consld console.dir(, { colors: true});<ESC>18<Left>i<C-o>T<
-iabbrev consldd console.dir(', { colors: true});<ESC>18<Left>i<C-o>T<
+iabbrev consld console.dir(, { colors: true});<ESC>18hi<C-o>T<
+iabbrev consldd console.dir(', { colors: true});<ESC>18hi<C-o>T<
 iabbrev ddc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev ddcc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));<ESC>
 " common stuff
 iabbrev usestrict 'use strict';
 iabbrev expp exports. = (req, res, next) => {<ESC>0f.a<C-o>T<
-iabbrev forl for(let i = 0; i ; i++){<ESC>6<Left>i<C-o>T<
-iabbrev forll for(let i = ; i > 0; i--){<ESC>13<Left>i<C-o>T<
+iabbrev forl for(let i = 0; i ; i++){<ESC>6hi<C-o>T<
+iabbrev forll for(let i = ; i > 0; i--){<ESC>13hi<C-o>T<
 iabbrev ddata , { data: data });
 iabbrev mongoerr /* istanbul ignore if */<CR>if(err){ console.log(err); }<CR>else {
 iabbrev istanif /* istanbul ignore if */
