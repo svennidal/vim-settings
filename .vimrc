@@ -161,7 +161,7 @@ iabbrev mongoerr /* istanbul ignore if */<CR>if(err){ console.log(err); }<CR>els
 iabbrev istanif /* istanbul ignore if */
 iabbrev istanelse /* istanbul ignore else */
 iabbrev routesindex 'use strict';<CR>const express = require('express'),<CR>fs = require('fs'),<CR>router = express.Router();<CR><CR>module.exports = (passport) =>{<CR>fs.readdirSync(__dirname).forEach((file) => {<CR>if(file === 'index.js' \|\| file.substr(file.lastIndexOf('.') + 1) !== 'js'){<CR>return;<CR>}<CR>let name = file.substr(0, file.indexOf('.'));<CR>require('./' + name)(router, passport);<CR>});<CR><CR>return router;<CR>};<ESC>
-iabbrev routesroute 'use strict';<CR>const isAuthenticated = (req, res, next) =>  {<CR>if (req.isAuthenticated()){ return next(); }<CR>res.redirect('/login');<CR>};<CR><CR>module.exports = (router, passport) =>{<CR>};<ESC>Orouter.<C-o>T<
+iabbrev routesroute 'use strict';<CR>const isAuthenticated = (req, res, next) =>  {<CR>if (req.isAuthenticated()){ return next(); }<CR>res.redirect('/login');<CR>};<CR><CR>module.exports = (router, passport) =>{<CR>};<ESC>Oconst  = require('../controllers/<ESC>26hi<C-o>T<
 iabbrev modell 'use strict';<CR>const mongoose = require('mongoose'),<CR>Schema = mongoose.Schema;<CR><CR>const = new Schema({<CR>});<CR><CR>module.exports = mongoose.model('', );<ESC>3k0ea<SPACE><C-o>T<
 iabbrev modull 'use strict';<CR>const Mmm = require('../models/mmm');<CR><CR>exports.get = (data) => {<CR>return new Promise((resolve, reject) => {<CR>Mmm.find((err, mmm) => {<CR>if(err){ reject('failed getting mmm.'); }<CR>else {<CR>data.mmm = mmm;<CR>resolve(data);<CR>}<CR>});<CR>});<CR>};<ESC>gg
 iabbrev typestring { type: String, default: '' },
@@ -177,7 +177,7 @@ iabbrev testget data = JSON.parse(res.text);
 iabbrev testitget it('', (done) => {<CR>user<CR>.get('<CR><BS><BS>.expect(200)<CR>.end((err, res) => {<CR>data = JSON.parse(res.text);<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>9kf'ashould <C-o>T<
 iabbrev testitpost it('', (done) => {<CR>user<CR>.post('<CR><BS><BS>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>8kf'ashould <C-o>T<
 iabbrev testdescribe describe('', () => {<CR><CR><CR><CR><CR><CR>});<ESC>6kf'awhen <C-o>T<
-iabbrev teststart 'use strict';<CR>const app = require('../app'),<CR>request = require('supertest'),<CR>should = require('should'),<CR>user = request.agent(app);<CR>let data;<CR><CR>describe('', () => {<CR><CR><CR><CR><CR><CR>});<ESC>6kf'awhen <C-o>T<
+iabbrev teststart 'use strict';<CR>const app     = require('../app'),<CR>request = require('supertest'),<CR>should  = require('should'),<CR>chalk   = require('chalk'),<CR>user    = request.agent(app);<CR>let data;<CR><CR>describe('', () => {<CR><CR><CR>});<ESC>3kf'awhen <C-o>T<
 iabbrev testinit it('should create an admin account and return 200', (done) => {<CR>request(app)<CR>.get('/init')<CR>.expect(200)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<CR>
 iabbrev testlogin it('should login the user and return 302', (done) => {<CR>user<CR>.post('/login')<CR>.send({ username: '', password: '' })<CR>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>6kf'a<C-o>T<
 iabbrev testlogout it('should logout the user and return 302', (done) => {<CR>user<CR>.get('/logout')<CR>.expect(302)<CR>.end((err, res) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});
@@ -218,3 +218,6 @@ nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 nnoremap <Up> :resize -2<CR>
 nnoremap <Down> :resize +2<CR>
+
+nnoremap <tab> gt
+nnoremap <s-tab> gT
