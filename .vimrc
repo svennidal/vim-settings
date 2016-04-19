@@ -1,5 +1,5 @@
 set nocompatible "no idea
-set nofoldenable "no idea
+" set nofoldenable "no idea
 set backspace=2	 "for correct backspace behaviour
 filetype plugin indent on
 set autoindent "everything else is crazy
@@ -115,7 +115,7 @@ autocmd BufRead,BufNewFile *.jade set filetype=jade
 autocmd Filetype jade setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 " This is for escaping nested hell, where all the code ends on the right side
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 autoindent "nofoldenable
 autocmd Filetype css setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 autocmd BufRead,BufNewFile *.swift set filetype=swift
 autocmd Filetype swift setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
@@ -167,6 +167,8 @@ iabbrev modull 'use strict';<CR>const Mmm = require('../models/mmm');<CR><CR>exp
 iabbrev typestring { type: String, default: '' },
 iabbrev reqb req.body.<C-o>T<
 iabbrev reqp req.params.<C-o>T<
+iabbrev reqf req.files.
+iabbrev promiss return new Promise((resolve, reject) => {
 
 " testing dev
 iabbrev testenv /* istanbul ignore else */<CR>if(process.env.NODE_ENV == 'testing'){
@@ -193,9 +195,6 @@ iabbrev _give GIVEN(
 iabbrev _when WHEN(
 iabbrev _then THEN(
 
-iabbrev findsjavar Restaurant.findOne({ 'name': 'Sjavarpakkhusid' }, (err, Rest) => {<CR>if(err){ console.log(err); }<CR>else {
-iabbrev updatesjavar restModule.update(Rest);
-
 iabbrev kvesve Kveðja,<CR>Svenni Dal<CR><CR>svennidal@jokula.is<CR>+3548231066
 
 " I keep closing tabs accidentally. No use :x or :w followed by :q
@@ -221,3 +220,5 @@ nnoremap <Down> :resize +2<CR>
 
 nnoremap <tab> gt
 nnoremap <s-tab> gT
+
+nmap K <Plug>(devdocs-under-cursor)
