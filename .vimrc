@@ -223,3 +223,7 @@ nnoremap <tab> gt
 nnoremap <s-tab> gT
 
 nmap K <Plug>(devdocs-under-cursor)
+
+" sane visual yanking so the cursor stays put
+vnoremap y myy`y
+vnoremap Y myY`y
