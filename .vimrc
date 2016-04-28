@@ -150,14 +150,15 @@ iabbrev consld console.dir(, { colors: true});<ESC>18hi<C-o>T<
 iabbrev consldd console.dir(', { colors: true});<ESC>18hi<C-o>T<
 iabbrev ddc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev ddcc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
-iabbrev dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));<ESC>
+iabbrev dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));
 " common stuff
 iabbrev usestrict 'use strict';
 iabbrev expp exports. = (req, res, next) => {<ESC>0f.a<C-o>T<
+iabbrev ppromise return new Promise((resolve, reject) => {
 iabbrev forl for(let i = 0; i ; i++){<ESC>6hi<C-o>T<
 iabbrev forll for(let i = ; i > 0; i--){<ESC>13hi<C-o>T<
 iabbrev ddata , { data: data });
-iabbrev mongoerr /* istanbul ignore if */<CR>if(err){ console.log(err); }<CR>else {
+iabbrev mongoerr /* istanbul ignore if */<CR>if(err){ console.error('error:', err); }<CR>else {
 iabbrev istanif /* istanbul ignore if */
 iabbrev istanelse /* istanbul ignore else */
 iabbrev routesindex 'use strict';<CR>const express = require('express'),<CR>fs = require('fs'),<CR>router = express.Router();<CR><CR>module.exports = (passport) =>{<CR>fs.readdirSync(__dirname).forEach((file) => {<CR>if(file === 'index.js' \|\| file.substr(file.lastIndexOf('.') + 1) !== 'js'){<CR>return;<CR>}<CR>let name = file.substr(0, file.indexOf('.'));<CR>require('./' + name)(router, passport);<CR>});<CR><CR>return router;<CR>};<ESC>
@@ -167,7 +168,7 @@ iabbrev modull 'use strict';<CR>const Mmm = require('../models/mmm');<CR><CR>exp
 iabbrev typestring { type: String, default: '' },
 iabbrev reqb req.body.<C-o>T<
 iabbrev reqp req.params.<C-o>T<
-iabbrev reqf req.files.
+iabbrev reqf req.files.<C-o>T<
 iabbrev promiss return new Promise((resolve, reject) => {
 
 " testing dev
