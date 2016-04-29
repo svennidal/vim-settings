@@ -110,6 +110,9 @@ au BufNewFile,BufRead,BufWinEnter *.js syn match Commento /\/\*\*.*\*\// | syn m
 " This is for the less syntax highlighting
 " au BufNewFile,BufRead *.less set filetype=css
 
+" This is for the pug syntax highlighting and indent width
+autocmd BufRead,BufNewFile *.pug set filetype=pug
+autocmd Filetype pug setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 " This is for the jade syntax highlighting and indent width
 autocmd BufRead,BufNewFile *.jade set filetype=jade
 autocmd Filetype jade setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
@@ -223,7 +226,3 @@ nnoremap <tab> gt
 nnoremap <s-tab> gT
 
 nmap K <Plug>(devdocs-under-cursor)
-
-" sane visual yanking so the cursor stays put
-vnoremap y myy`y
-vnoremap Y myY`y
