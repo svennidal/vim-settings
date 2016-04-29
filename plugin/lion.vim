@@ -1,6 +1,8 @@
 " lion.vim - A Vim plugin for text alignment operators
 " Maintainer:   Tom McDonald <http://github.com/tommcdo>
 " Version:      1.0
+" https://github.com/tommcdo/vim-lion
+" glip=
 
 let s:count = 1
 if !exists('g:lion_prompt')
