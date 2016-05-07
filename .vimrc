@@ -1,5 +1,11 @@
 set nocompatible "no idea
+
+" FOLDS
 " set nofoldenable "no idea
+set foldmethod=syntax
+set foldnestmax=1
+set foldlevelstart=1
+
 set backspace=2	 "for correct backspace behaviour
 filetype plugin indent on
 set autoindent "everything else is crazy
