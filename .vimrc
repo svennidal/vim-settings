@@ -117,13 +117,14 @@ au BufNewFile,BufRead,BufWinEnter *.js syn match Commento /\/\*\*.*\*\// | syn m
 " au BufNewFile,BufRead *.less set filetype=css
 
 " This is for the pug syntax highlighting and indent width
-autocmd BufRead,BufNewFile *.pug set filetype=pug
-autocmd Filetype pug setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 " This is for the jade syntax highlighting and indent width
 autocmd BufRead,BufNewFile *.jade set filetype=jade
 autocmd Filetype jade setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
+autocmd BufRead,BufNewFile *.pug set filetype=pug
+autocmd Filetype pug setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 " This is for escaping nested hell, where all the code ends on the right side
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
+autocmd BufRead,BufNewFile *.js set filetype=js
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 autoindent "nofoldenable
 autocmd Filetype css setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 autocmd BufRead,BufNewFile *.swift set filetype=swift
