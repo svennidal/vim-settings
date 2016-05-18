@@ -2,7 +2,7 @@ set nocompatible "no idea
 
 " FOLDS
 " set nofoldenable "no idea
-set foldmethod=syntax
+set foldmethod=indent
 set foldnestmax=1
 set foldlevelstart=1
 
