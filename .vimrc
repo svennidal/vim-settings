@@ -109,10 +109,10 @@ set nohlsearch
 au BufNewFile,BufRead *.ejs set filetype=html
 autocmd Filetype ejs setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 
+au BufNewFile,BufRead,BufWinEnter *.js set filetype=javascript
 au BufNewFile,BufRead,BufWinEnter *.js syn match Commento /\/\*\*.*\*\// | syn match Lambda /=>/
 " au BufNewFile,BufRead,BufWinEnter *.js match Commento /\/\*\*.*\*\// 
 " au BufNewFile,BufRead,BufWinEnter *.js match Lambda /=>/
-" au BufNewFile,BufRead,BufWinEnter *.js set filetype=javascript
 " This is for the less syntax highlighting
 " au BufNewFile,BufRead *.less set filetype=css
 
