@@ -228,8 +228,8 @@ nmap <F12> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson) & //JÃ
 
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
-nnoremap <Up> :resize -2<CR>
-nnoremap <Down> :resize +2<CR>
+nnoremap <Up> :resize +2<CR>
+nnoremap <Down> :resize -2<CR>
 
 nnoremap <tab> gt
 nnoremap <s-tab> gT
