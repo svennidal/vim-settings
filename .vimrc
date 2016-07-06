@@ -157,6 +157,7 @@ abbreviate conslbcake console.log(chalk.blue('        CAKE!!\n                  
 " javascript
 " console logging
 iabbrev consl console.log();<Left><Left><C-o>T<
+iabbrev conse console.error();<Left><Left><C-o>T<
 iabbrev consll console.log(');<Left><Left><C-o>T<
 iabbrev consld console.dir(, { colors: true});<ESC>18hi<C-o>T<
 iabbrev consldd console.dir(', { colors: true});<ESC>18hi<C-o>T<
@@ -190,6 +191,7 @@ iabbrev testelse } else {<CR>res.render('<C-o>T<
 " testing test
 iabbrev testget data = JSON.parse(res.text);
 iabbrev testitget it('', (done) => {<CR>user<CR>.get('<CR><BS><BS>.expect(200)<CR>.end((err, res) => {<CR>data = JSON.parse(res.text);<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>9kf'ashould <C-o>T<
+" iabbrev testitpost it('', (done) => {<CR>user<CR>.post('<CR><BS><BS>.expect(200)<CR>.end((err, res) => {<CR>data = JSON.parse(res.text);<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>9kf'ashould <C-o>T<
 iabbrev testitpost it('', (done) => {<CR>user<CR>.post('<CR><BS><BS>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>8kf'ashould <C-o>T<
 iabbrev testdescribe describe('', () => {<CR><CR><CR><CR><CR><CR>});<ESC>6kf'awhen <C-o>T<
 iabbrev teststart 'use strict';<CR>const app     = require('../app'),<CR>request = require('supertest'),<CR>should  = require('should'),<CR>chalk   = require('chalk'),<CR>user    = request.agent(app);<CR>let data;<CR><CR>describe('', () => {<CR><CR><CR>});<ESC>3kf'awhen <C-o>T<
