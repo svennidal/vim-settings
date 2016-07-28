@@ -212,7 +212,7 @@ iabbrev _then THEN(
 
 iabbrev kvesve Kveðja,<CR>Svenni Dal<CR><CR>svennidal@jokula.is<CR>+3548231066
 
-" I keep closing tabs accidentally. No use :x or :w followed by :q
+" I keep closing tabs accidentally. Now use :x or :w followed by :q
 cabbrev wq w
 
 nmap zz zz20<C-e>
