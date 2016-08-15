@@ -127,6 +127,7 @@ autocmd Filetype html setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 autocmd BufRead,BufNewFile *.js set filetype=js
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 autoindent "nofoldenable
 autocmd Filetype css setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
+autocmd Filetype less setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 autocmd BufRead,BufNewFile *.swift set filetype=swift
 autocmd Filetype swift setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 autocmd BufRead,BufNewFile *.scala set filetype=scala
