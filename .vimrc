@@ -162,7 +162,12 @@ iabbrev conse console.error();<Left><Left><C-o>T<
 iabbrev consll console.log(');<Left><Left><C-o>T<
 iabbrev consld console.dir(, { colors: true});<ESC>18hi<C-o>T<
 iabbrev consldd console.dir(', { colors: true});<ESC>18hi<C-o>T<
-iabbrev ddc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
+iabbrev ddcr console.log(chalk.red());<Left><Left><Left><C-o>T<
+iabbrev ddcg console.log(chalk.green());<Left><Left><Left><C-o>T<
+iabbrev ddcb console.log(chalk.blue());<Left><Left><Left><C-o>T<
+iabbrev ddcm console.log(chalk.magenta());<Left><Left><Left><C-o>T<
+iabbrev ddcc console.log(chalk.cyan());<Left><Left><Left><C-o>T<
+iabbrev ddcy console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev ddcc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));
 " common stuff
