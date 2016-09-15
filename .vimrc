@@ -97,6 +97,11 @@ set cursorline cursorcolumn colorcolumn=81
 hi Lambda          ctermbg=NONE ctermfg=87 cterm=NONE
 hi Commento          ctermbg=NONE ctermfg=141 cterm=NONE
 hi ColorColumn     ctermbg=233  ctermfg=magenta   cterm=NONE
+
+" Highlight ES6 template strings
+hi link javaScriptTemplateDelim String
+hi link javaScriptTemplateVar Text
+hi link javaScriptTemplateString String
 colorscheme spacegray
 
 
