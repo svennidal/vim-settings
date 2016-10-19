@@ -6,6 +6,8 @@ set foldmethod=indent
 set foldnestmax=1
 set foldlevelstart=1
 
+let g:netrw_liststyle = 3
+
 set backspace=2	 "for correct backspace behaviour
 filetype plugin indent on
 set autoindent "everything else is crazy
@@ -164,6 +166,7 @@ abbreviate consljokula console.log('           d8    d8  88    ,ad8888ba,    88 
 " javascript
 " console logging
 iabbrev consl console.log();<Left><Left><C-o>T<
+iabbrev conss console.say();<Left><Left><C-o>T<
 iabbrev conse console.error();<Left><Left><C-o>T<
 iabbrev consll console.log(');<Left><Left><C-o>T<
 iabbrev consld console.dir(, { colors: true});<ESC>18hi<C-o>T<
