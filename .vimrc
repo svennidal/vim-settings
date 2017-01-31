@@ -244,7 +244,7 @@ nmap <F3> :!cat %<CR>
 nmap <F4> ggVGg?
 nmap <F5> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson), All rights reserved <ESC>o><BS><ESC>
 " nmap <F6> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
-nmap <F6> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson), All rights reserved <ESC>o<BS><BS><BS><ESC>
+nmap <F6> :!/Users/svennidal/bin/cow.sh <CR>
 nmap <F7> :!node %<CR>
 nmap <F8> :!cat % \| pbcopy <CR>
 nmap <F9> :!pandoc -s -o temp.html % && open temp.html <CR>
