@@ -207,7 +207,7 @@ iabbrev ccatch .catch((reason) => {<CR>console.error('error', reason);<CR>res.st
 
 " testing dev
 iabbrev testenv /* istanbul ignore else */<CR>if(process.env.NODE_ENV == 'testing'){
-iabbrev testsend res.send(JSON.stringify(data));
+iabbrev testsend res.json(data));
 iabbrev testelse } else {<CR>res.render('<C-o>T<
 " testing test
 iabbrev testget data = JSON.parse(res.text);
