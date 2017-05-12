@@ -30,16 +30,16 @@ set t_Co=256
 " else show normal line numbers
 set number
 if has('autocmd')
-augroup vimrc_linenumbering
-	autocmd!
-	autocmd WinLeave *
-				\ if &number |
-				\	set norelativenumber |
-				\ endif
-	autocmd BufWinEnter *
-				\ if &number |
-				\	set relativenumber |
-				\ endif
+	augroup vimrc_linenumbering
+		autocmd!
+		autocmd WinLeave *
+					\ if &number |
+					\	set norelativenumber |
+					\ endif
+		autocmd BufWinEnter *
+					\ if &number |
+					\	set relativenumber |
+					\ endif
 	autocmd VimEnter *
 				\ if &number |
 				\	set relativenumber |
@@ -239,7 +239,7 @@ iabbrev kvesve Kveðja,<CR>Svenni Dal<CR><CR>svennidal@jokula.is<CR>+3548231066
 cabbrev wq w
 
 nmap zz zz20<C-e>
-nmap <F2> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson) & //JÖKULÁ, All rights reserved <ESC>o><BS><ESC>
+nmap <F2> V$%=
 nmap <F3> :!cat %<CR>
 nmap <F4> ggVGg?
 nmap <F5> !!date<CR>i// Copyright 2016, Svenni Dal(Sveinn Dal Bjornsson), All rights reserved <ESC>o><BS><ESC>
