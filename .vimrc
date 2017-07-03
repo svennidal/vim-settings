@@ -212,7 +212,7 @@ iabbrev testelse } else {<CR>res.render('<C-o>T<
 " testing test
 iabbrev testget data = JSON.parse(res.text);
 " iabbrev testitget it('', (done) => {<CR>user<CR>.get('<CR><BS><BS>.expect(200)<CR>.end((err, res) => {<CR>data = JSON.parse(res.text);<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>9kf'ashould <C-o>T<
-iabbrev testitget it('should', (done) => {<CR>user<CR>.get('')<CR>.expect(302)<CR>.end((err, res) => {<CR>data = JSON.parse(res.text);<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>7kA<BS><BS><ESC>2kf'i <C-o>T<
+iabbrev testitget it('should', (done) => {<CR>user<CR>.get('')<CR>.expect(200)<CR>.end((err, res) => {<CR>data = JSON.parse(res.text);<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>7kA<BS><BS><ESC>2kf'i <C-o>T<
 " iabbrev testitpost it('', (done) => {<CR>user<CR>.post('<CR><BS><BS>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>9kf'ashould <C-o>T<
 iabbrev testitpost it('should', (done) => {<CR>user<CR>.post('')<CR>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>6kA<BS><BS><ESC>2kf'i <C-o>T<
 " iabbrev testitpost it('', (done) => {<CR>user<CR>.post('<CR><BS><BS>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>8kf'ashould <C-o>T<
