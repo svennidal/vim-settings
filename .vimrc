@@ -11,7 +11,7 @@ let g:netrw_liststyle = 3
 set backspace=2	 "for correct backspace behaviour
 filetype plugin indent on
 set autoindent "everything else is crazy
-set tabstop=4 softtabstop=4 shiftwidth=4 "I might be changing universal to 2
+set tabstop=2 softtabstop=2 shiftwidth=2 "I might be changing universal to 2
 set ruler "compiler warnings often give column number, this is cool for that
 
 set encoding=utf-8 fileencoding=utf-8 "icelandic letters and stuff
