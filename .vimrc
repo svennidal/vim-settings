@@ -156,6 +156,9 @@ abbreviate htmlsdbc <!-- Copyright Svenni Dal - Sveinn Dal Bjornsson - -->
 " print("Hello! Yes, this is dog!")
 abbreviate helloc std::cout << "Hello! Yes, this is dog!\n";
 abbreviate hellojs console.log('Hello! Yes, this is dog!');
+
+abbreviate sendbobsjs console.log('\n\n\n\n\n\nS̞̗͈͉̘̊͂̎ͯe̖͚̥̫͕̬͓ͧ̊͛ͦ͛̅̓̍̌ͥ̓̅n̺̠̗̞̬̪͕͓̤ͫ̍̈͑ͮ͛ͫd͕͇̩̠̻̪̪̈́̽͒̀̈́ͮ͌ͥ̄̈́̑ͅ ̽̍̌̏͛ͥ͋ͫ̐͋̎̇ͥ͂̈́̌̃̚̚b̘̩͍̞̜̤͇̞̥̣̭̰ͪ̆ͮ̔ͭͅͅo̙̣̩̦͊̐͒̆̅ͦ̏ͦ̐ͯͨ͑̂̌ͅb͇̘̮͔̱̪͖̞͖̥͍ͨͩ̒͂̔̄͗s̤̥̳͙̏̈̐͛ͧ̍ͥͧ͂ͥ͗̋ ̳̬̻͔̻̤̯̹̖̙̹͚̭̤͔͗̽ͬ͒ạ̦̜͇̪̺̼̻̯͈̙̈́̑ͯ̔ͩn̮̮̫̰̯̎̄͗̓̈̒̎ͯ̓ͣͫͩͣ̋d̞͙̠ͪ͐̃ͣ̿͌͂͂͌͆̊̏̃̿ͩͅ ̟͔̯͚̉͆̐̏v͓͇͕͎͕̪͔͈̪̙̺̘̾͗ͧͮͬ̌ͩa̖̝̝̱͉̼̹̣͖͎̅̓̂̍̑̋ͧ̾g͉͔͍͚̥͖͐̆̊̓̂͌͐̆ͯ̀̃́͗é͖͒̇ͫͩ͑͊ͤ̉̌̽̇̄ͧ͋ͮ͑͋n̮̣͙̩͍̳̦ͨͯ͑ͪͨ̉̌ͤ̉͂̆ͪe̙̟̫͔̰̼͉̘͙̟̮ͧͯ̏͐̅ͬ͗͂\n\n\n\n\n\n\n');
+
 abbreviate gohello fmt.Println("Hello! Yes, this is dog!")
 abbreviate helloj System.out.println("Hello! Yes, this is dog!");
 abbreviate hellos print("Hello! Yes, this is dog!")
@@ -172,6 +175,7 @@ iabbrev goprint fmt.Println()<Left><C-o>T<
 iabbrev consl console.log();<Left><Left><C-o>T<
 iabbrev conss console.say();<Left><Left><C-o>T<
 iabbrev conse console.error();<Left><Left><C-o>T<
+iabbrev seqerr console.error(chalk.green('HINT:', reason.parent.hint));
 iabbrev consll console.log(');<Left><Left><C-o>T<
 iabbrev consld console.dir(, { colors: true});<ESC>18hi<C-o>T<
 iabbrev consldd console.dir(', { colors: true});<ESC>18hi<C-o>T<
@@ -218,7 +222,7 @@ iabbrev testget data = JSON.parse(res.text);
 " iabbrev testitget it('', (done) => {<CR>user<CR>.get('<CR><BS><BS>.expect(200)<CR>.end((err, res) => {<CR>data = JSON.parse(res.text);<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>9kf'ashould <C-o>T<
 iabbrev testitget it('should', (done) => {<CR>user<CR>.get('')<CR>.expect(200)<CR>.end((err, res) => {<CR>data = JSON.parse(res.text);<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>7kA<BS><BS><ESC>2kf'i <C-o>T<
 " iabbrev testitpost it('', (done) => {<CR>user<CR>.post('<CR><BS><BS>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>9kf'ashould <C-o>T<
-iabbrev testitpost it('should', (done) => {<CR>user<CR>.post('')<CR>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>6kA<BS><BS><ESC>2kf'i <C-o>T<
+iabbrev testitpost it('should', (done) => {<CR>user<CR>.post('')<CR>.expect(200)<CR>.end((err, res) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>6kA<BS><BS><ESC>2kf'i <C-o>T<
 " iabbrev testitpost it('', (done) => {<CR>user<CR>.post('<CR><BS><BS>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR><BS><BS>});<ESC>8kf'ashould <C-o>T<
 iabbrev testdescribe describe('', () => {<CR><CR><CR><CR><CR><CR>});<ESC>6kf'awhen <C-o>T<
 iabbrev teststart 'use strict';<CR>const app     = require('../app'),<CR>request = require('supertest'),<CR>should  = require('should'),<CR>chalk   = require('chalk'),<CR>user    = request.agent(app);<CR>let data;<CR><CR>describe('', () => {<CR><CR><CR>});<ESC>3kf'awhen <C-o>T<
@@ -226,6 +230,10 @@ iabbrev testinit it('should create an admin account and return 200', (done) => {
 iabbrev testlogin it('should login the user and return 302', (done) => {<CR>user<CR>.post('/login')<CR>.send({ username: '', password: '' })<CR>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>6kf'a<C-o>T<
 iabbrev testlogout it('should logout the user and return 302', (done) => {<CR>user<CR>.get('/logout')<CR>.expect(302)<CR>.end((err, res) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});
 iabbrev testclean it('should clean up the database', (done) => {<CR>request(app)<CR>.get('/clean')<CR>.expect(200)<CR>.end((err, res) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>
+
+iabbrev loggg if(process.env.NODE_ENV != 'testing'){<CR>r.post('http://localhost:65535/log').form({<CR>userID  : req.user.id,<CR>message : ``,<CR>action  : '',<CR>onWhat  : '',<CR>whatID  : id,<CR>error   : false<CR>});<CR>}<ESC>6k3wa<C-o>T<
+iabbrev logggerr if(process.env.NODE_ENV != 'testing'){<CR>r.post('http://localhost:65535/log').form({<CR>userID  : req.user.id,<CR>message : ``,<CR>action  : '',<CR>onWhat  : '',<CR>whatID  : id,<CR>error   : true<CR>});<CR>}<ESC>6k3wa<C-o>T<
+iabbrev logggmacro /r\/<80>kb.post^Mjjyykkk$%a else {^M}^[koconsole.log(chalk.green(^[pkJdwdwdwA<80>kb<80>kb^@));^[
 
 iabbrev llorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
@@ -241,21 +249,25 @@ iabbrev _then THEN(
 
 iabbrev kvesve Kveðja,<CR>Svenni Dal<CR><CR>svennidal@jokula.is<CR>+3548231066
 
+iabbrev livereloadjs script(src='http://localhost:35729/livereload.js')
+
 " I keep closing tabs accidentally. Now use :x or :w followed by :q
 cabbrev wq w
 
-nmap zz zz20<C-e>
+" nmap zz zz20<C-e>
 nmap <F2> V$%=
 nmap <F3> :!cat %<CR>
 nmap <F4> ggVGg?
-nmap <F5> !!date<CR>i// Copyright 2017, Svenni Dal(Sveinn Dal Bjornsson), All rights reserved <ESC>o><BS><ESC>
+nmap <F5> `
 " nmap <F6> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
 nmap <F6> :!/Users/svennidal/bin/cow.sh <CR>
 nmap <F7> :!node %<CR>
 nmap <F8> :!cat % \| pbcopy <CR>
 nmap <F9> :!pandoc -s -o temp.html % && open temp.html <CR>
 nmap <F10> :!open %<CR>
-nmap <F12> !!date<CR>i// Copyright 2017, Svenni Dal(Sveinn Dal Bjornsson) & //JÖKULÁ, All rights reserved <ESC>o<BS><BS><BS><ESC>
+nmap <F12> !!date<CR>i// Copyright 2017, Svenni Dal(Sveinn Dal Bjornsson) & //JÖKULÁ, All rights reserved <ESC>o<BS><BS><BS>'use strict';<ESC>
+
+imap <c-j> `
 
 nnoremap <Left> :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
@@ -264,5 +276,4 @@ nnoremap <Down> :resize -2<CR>
 
 nnoremap <tab> gt
 nnoremap <s-tab> gT
-
 nmap K <Plug>(devdocs-under-cursor)
