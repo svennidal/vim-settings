@@ -118,6 +118,7 @@ autocmd Filetype ejs setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 
 au BufNewFile,BufRead,BufWinEnter *.js set filetype=javascript
 au BufNewFile,BufRead,BufWinEnter *.js syn match Commento /\/\*\*.*\*\// | syn match Lambda /=>/
+au BufNewFile,BufRead,BufWinEnter *.go syn match Commento /\/\*\*.*\*\// | syn match Lambda /=>/
 " au BufNewFile,BufRead,BufWinEnter *.js match Commento /\/\*\*.*\*\// 
 " au BufNewFile,BufRead,BufWinEnter *.js match Lambda /=>/
 " This is for the less syntax highlighting
@@ -197,10 +198,10 @@ iabbrev ddata , { data: data });
 iabbrev mongoerr /* istanbul ignore if */<CR>if(err){ console.error('error:', err); }<CR>else {
 iabbrev istanif /* istanbul ignore if */
 iabbrev istanelse /* istanbul ignore else */
-iabbrev routesindex 'use strict';<CR>const express = require('express'),<CR>fs = require('fs'),<CR>router = express.Router();<CR><CR>module.exports = (passport) =>{<CR>fs.readdirSync(__dirname).forEach((file) => {<CR>if(file === 'index.js' \|\| file.substr(file.lastIndexOf('.') + 1) !== 'js'){<CR>return;<CR>}<CR>let name = file.substr(0, file.indexOf('.'));<CR>require('./' + name)(router, passport);<CR>});<CR><CR>return router;<CR>};<ESC>
-iabbrev routesroute 'use strict';<CR>const isAuthenticated = (req, res, next) =>  {<CR>if (req.isAuthenticated()){ return next(); }<CR>res.redirect('/login');<CR>};<CR><CR>module.exports = (router, passport) =>{<CR>};<ESC>Oconst  = require('../controllers/<ESC>26hi<C-o>T<
-iabbrev modell 'use strict';<CR>const mongoose = require('mongoose'),<CR>Schema = mongoose.Schema;<CR><CR>const = new Schema({<CR>});<CR><CR>module.exports = mongoose.model('', );<ESC>3k0ea<SPACE><C-o>T<
-iabbrev modull 'use strict';<CR>const Mmm = require('../models/mmm');<CR><CR>exports.get = (data) => {<CR>return new Promise((resolve, reject) => {<CR>Mmm.find((err, mmm) => {<CR>if(err){ reject('failed getting mmm.'); }<CR>else {<CR>data.mmm = mmm;<CR>resolve(data);<CR>}<CR>});<CR>});<CR>};<ESC>gg
+iabbrev routesindex const express = require('express'),<CR>fs = require('fs'),<CR>router = express.Router();<CR><CR>module.exports = (passport) =>{<CR>fs.readdirSync(__dirname).forEach((file) => {<CR>if(file === 'index.js' \|\| file.substr(file.lastIndexOf('.') + 1) !== 'js'){<CR>return;<CR>}<CR>let name = file.substr(0, file.indexOf('.'));<CR>require('./' + name)(router, passport);<CR>});<CR><CR>return router;<CR>};<ESC>
+iabbrev routesroute const isAuthenticated = (req, res, next) =>  {<CR>if (req.isAuthenticated()){ return next(); }<CR>res.redirect('/login');<CR>};<CR><CR>module.exports = (router, passport) =>{<CR>};<ESC>Oconst  = require('../controllers/<ESC>26hi<C-o>T<
+iabbrev modell const mongoose = require('mongoose'),<CR>Schema = mongoose.Schema;<CR><CR>const = new Schema({<CR>});<CR><CR>module.exports = mongoose.model('', );<ESC>3k0ea<SPACE><C-o>T<
+iabbrev modull const Mmm = require('../models/mmm');<CR><CR>exports.get = (data) => {<CR>return new Promise((resolve, reject) => {<CR>Mmm.find((err, mmm) => {<CR>if(err){ reject('failed getting mmm.'); }<CR>else {<CR>data.mmm = mmm;<CR>resolve(data);<CR>}<CR>});<CR>});<CR>};<ESC>gg
 iabbrev typestring { type: String, default: '' },
 iabbrev typenumber { type: Number, default: 0 },
 iabbrev typeboolean { type: Boolean, default: false },
@@ -258,14 +259,14 @@ cabbrev wq w
 nmap <F2> V$%=
 nmap <F3> :!cat %<CR>
 nmap <F4> ggVGg?
-nmap <F5> `
+nmap <F5> :!jshint %<CR>
 " nmap <F6> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
 nmap <F6> :!/Users/svennidal/bin/cow.sh <CR>
 nmap <F7> :!node %<CR>
 nmap <F8> :!cat % \| pbcopy <CR>
 nmap <F9> :!pandoc -s -o temp.html % && open temp.html <CR>
 nmap <F10> :!open %<CR>
-nmap <F12> !!date<CR>i// Copyright 2017, Svenni Dal(Sveinn Dal Bjornsson) & //JÖKULÁ, All rights reserved <ESC>o<BS><BS><BS>'use strict';<ESC>
+nmap <F12> !!date<CR>i// Copyright 2018, Svenni Dal(Sveinn Dal Bjornsson) & //JÖKULÁ, All rights reserved <ESC>o<BS><BS><BS>'use strict';<CR><ESC>
 
 imap <c-j> `
 
