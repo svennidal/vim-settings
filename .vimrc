@@ -278,3 +278,4 @@ nnoremap <Down> :resize -2<CR>
 nnoremap <tab> gt
 nnoremap <s-tab> gT
 nmap K <Plug>(devdocs-under-cursor)
+map <C-n> :NERDTreeToggle<CR>
