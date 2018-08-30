@@ -4,7 +4,7 @@ set nocompatible "no idea
 " set nofoldenable "no idea
 set foldmethod=indent
 set foldnestmax=2
-set foldlevelstart=1
+set foldlevelstart=2
 
 let g:netrw_liststyle = 3
 
