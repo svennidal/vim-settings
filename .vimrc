@@ -143,6 +143,10 @@ autocmd Filetype swift setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 autocmd BufRead,BufNewFile *.scala set filetype=scala
 autocmd Filetype scala setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.mkd set filetype=markdown
+autocmd Filetype markdown setlocal ts=2 sts=2 sw=2 nofoldenable
+
 " 4 spaces for indentation? Hell no. Not even 2. Use tabs.
 function SvenniStandard()
 	%s/    /\t/g
