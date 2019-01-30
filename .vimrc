@@ -253,6 +253,7 @@ iabbrev _then THEN(
 iabbrev kvesve Kveðja,<CR>Svenni Dal<CR><CR>svennidal@jokula.is<CR>+3548231066
 
 iabbrev livereloadjs script(src='http://localhost:35729/livereload.js')
+iabbrev htmlsimple <html><CR><head><CR></head><CR><body><CR></body><CR></html><ESC>gg
 
 " I keep closing tabs accidentally. Now use :x or :w followed by :q
 cabbrev wq w
