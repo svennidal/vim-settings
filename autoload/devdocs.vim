@@ -24,9 +24,24 @@ function! s:related_to(ft) abort
     return get(g:devdocs_filetype_map, a:ft, get(s:DEFAULT_FILETYPE_MAP, a:ft, ''))
 endfunction
 
+function! s:shellescape(str) abort
+    if !s:IS_WINDOWS
+        return shellescape(a:str)
+    endif
+    let ss = &shellslash
+    set noshellslash
+    try
+        return shellescape(a:str)
+    finally
+        let &shellslash = ss
+    endtry
+endfunction
+
 function! s:open_fallback(url) abort
-    let url = shellescape(a:url)
-    if s:IS_UNIX
+    let url = s:shellescape(a:url)
+    if g:devdocs_open_cmd !=# ''
+        call system(g:devdocs_open_cmd . ' ' . url)
+    elseif s:IS_UNIX
         if executable('xdg-open')
             call system('xdg-open ' . url)
         else
@@ -44,7 +59,7 @@ function! s:open_fallback(url) abort
     if v:shell_error
         echoerr 'Error on opening URL: ' . url
     else
-        echo 'Page opened: ' . url
+        echo 'Page opened: ' . a:url
     endif
 endfunction
 
@@ -61,7 +76,11 @@ function! s:query_url(base_url, query, doc) abort
 endfunction
 
 function! s:build_url(query, doc) abort
-    let url = 'http://' . g:devdocs_host
+    if exists('g:devdocs_url')
+        let url = g:devdocs_url
+    else
+        let url = 'https://' . g:devdocs_host
+    endif
     if a:query ==# ''
         if a:doc ==# ''
             return url

@@ -1,5 +1,4 @@
 set nocompatible "no idea
-
 " FOLDS
 " set nofoldenable "no idea
 set foldmethod=indent
@@ -119,6 +118,9 @@ autocmd Filetype ejs setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 au BufNewFile,BufRead,BufWinEnter *.js set filetype=javascript
 au BufNewFile,BufRead,BufWinEnter *.js syn match Commento /\/\*\*.*\*\// | syn match Lambda /=>/
 au BufNewFile,BufRead,BufWinEnter *.go syn match Commento /\/\*\*.*\*\// | syn match Lambda /=>/
+au BufNewFile,BufRead,BufWinEnter *.ex syn match Commento /\/\*\*.*\*\// | syn match Lambda /=>/
+au BufNewFile,BufRead,BufWinEnter *.exs syn match Commento /\/\*\*.*\*\// | syn match Lambda /=>/
+au BufNewFile,BufRead,BufWinEnter *.php syn match Commento /\/\*\*.*\*\// | syn match Lambda /=>/ | set colorcolumn=121
 " au BufNewFile,BufRead,BufWinEnter *.js match Commento /\/\*\*.*\*\// 
 " au BufNewFile,BufRead,BufWinEnter *.js match Lambda /=>/
 " This is for the less syntax highlighting
@@ -146,6 +148,13 @@ autocmd Filetype scala setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.mkd set filetype=markdown
 autocmd Filetype markdown setlocal ts=2 sts=2 sw=2 nofoldenable
+
+autocmd BufRead,BufNewFile *.php set filetype=php
+autocmd Filetype php setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd BufRead,BufNewFile *.twig set filetype=twig
+autocmd Filetype twig setlocal tabstop=4 shiftwidth=4 expandtab
+
+au BufEnter * setl backupcopy=yes
 
 " 4 spaces for indentation? Hell no. Not even 2. Use tabs.
 function SvenniStandard()
@@ -240,20 +249,15 @@ iabbrev logggmacro /r\/<80>kb.post^Mjjyykkk$%a else {^M}^[koconsole.log(chalk.gr
 
 iabbrev llorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-" catch cpp unit test
-iabbrev _test TEST_CASE(
-iabbrev _sect SECTION(
-iabbrev _requ REQUIRE(
-iabbrev _chec CHECK(
-iabbrev _scen SCENARIO(
-iabbrev _give GIVEN(
-iabbrev _when WHEN(
-iabbrev _then THEN(
 
 iabbrev kvesve Kveðja,<CR>Svenni Dal<CR><CR>svennidal@jokula.is<CR>+3548231066
 
 iabbrev livereloadjs script(src='http://localhost:35729/livereload.js')
 iabbrev htmlsimple <html><CR><head><CR></head><CR><body><CR></body><CR></html><ESC>gg
+
+" PHP ABS
+iabbrev fwriteout fwrite(STDOUT, print_r(, TRUE));<Left><Left><Left><Left><Left><Left><Left><Left><Left><C-o>T<
+iabbrev fwriteerr fwrite(STDERR, print_r(, TRUE));<Left><Left><Left><Left><Left><Left><Left><Left><Left><C-o>T<
 
 " I keep closing tabs accidentally. Now use :x or :w followed by :q
 cabbrev wq w
@@ -282,3 +286,4 @@ nnoremap <tab> gt
 nnoremap <s-tab> gT
 nmap K <Plug>(devdocs-under-cursor)
 map <C-n> :NERDTreeToggle<CR>
+hi Normal guibg=NONE ctermbg=NONE
