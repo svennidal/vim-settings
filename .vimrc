@@ -1,3 +1,4 @@
+set exrc
 set nocompatible "no idea
 " FOLDS
 " set nofoldenable "no idea
@@ -185,6 +186,7 @@ abbreviate conslbcake console.log(chalk.blue('        CAKE!!\n                  
 abbreviate consljokula console.log('           d8    d8  88    ,ad8888ba,    88      a8P  88        88  88                  db         \n         ,8P\'  ,8P\'  88   d8"\'    `"8b   88    ,88\'   88        88  88                 d88b        \n        d8"   d8"    88  d8\'        `8b  88  ,88"     88        88  88                d8\'`8b       \n      ,8P\'  ,8P\'     88  88          88  88,d88\'      88        88  88               d8\'  `8b      \n     d8"   d8"       88  88          88  8888"88,     88        88  88              d8YaaaaY8b     \n   ,8P\'  ,8P\'        88  Y8,        ,8P  88P   Y8b    88        88  88             d8""""""""8b    \n  d8"   d8"  88,   ,d88   Y8a.    .a8P   88     "88,  Y8a.    .a8P  88            d8\'        `8b   \n 8P\'   8P\'    "Y8888P"     `"Y8888Y"\'    88       Y8b  `"Y8888Y"\'   88888888888  d8\'          `8b');
 iabbrev goprint fmt.Println()<Left><C-o>T<
 " javascript
+iabbrev constchalk const chalk = require('chalk');
 " console logging
 iabbrev consl console.log();<Left><Left><C-o>T<
 iabbrev conss console.say();<Left><Left><C-o>T<
@@ -287,3 +289,5 @@ nnoremap <s-tab> gT
 nmap K <Plug>(devdocs-under-cursor)
 map <C-n> :NERDTreeToggle<CR>
 hi Normal guibg=NONE ctermbg=NONE
+
+set secure
