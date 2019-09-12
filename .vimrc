@@ -11,7 +11,19 @@ let g:netrw_liststyle = 3
 set backspace=2	 "for correct backspace behaviour
 filetype plugin indent on
 set autoindent "everything else is crazy
-set tabstop=2 softtabstop=2 shiftwidth=2 "I might be changing universal to 2
+set tabstop=2 softtabstop=2 shiftwidth=2
+
+
+
+
+"THIS IS NOLY FOR PONTUS
+set expandtab
+"
+
+
+
+
+
 set ruler "compiler warnings often give column number, this is cool for that
 
 set encoding=utf-8 fileencoding=utf-8 "icelandic letters and stuff
@@ -20,7 +32,7 @@ set mouse=a "enable mouse
 set ttymouse=sgr "enable mouse when in tmux
 
 set ttyfast "an attempt to speed up scrolling 
-set splitbelow splitright "else it splits above and to the left. Arabic much?
+set splitbelow splitright "else it splits above and to the left.
 
 " Colors and stuff. This is inspired by Spacegray --------------------
 " t_Co=256 to get all the colors in the terminal. Else can fail if screen tmux
@@ -59,10 +71,10 @@ let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'fugitive', 'readonly', 'relativepath', 'modified' ] ]
       \ },
       \ 'inactive': {
-      \   'left': [ [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \   'left': [ [ 'fugitive', 'readonly', 'relativepath', 'modified' ] ]
       \ },
       \ 'component': {
       \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
@@ -202,7 +214,8 @@ iabbrev ddcm console.log(chalk.magenta());<Left><Left><Left><C-o>T<
 iabbrev ddcc console.log(chalk.cyan());<Left><Left><Left><C-o>T<
 iabbrev ddcy console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev ddcc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
-iabbrev dddata console.log(chalk.blue(JSON.stringify(data, null, 2)));
+iabbrev dddata console.log(chalk.yellow(JSON.stringify(, null, 2)));<Esc>5ba<C-o>T<
+iabbrev cddata const chalk = require('chalk');<CR>console.log(chalk.yellow(JSON.stringify(, null, 2)));<Esc>5ba<C-o>T<
 " common stuff
 iabbrev usestrict 'use strict';
 iabbrev expp exports. = (req, res, next) => {<ESC>0f.a<C-o>T<
@@ -235,9 +248,9 @@ iabbrev testsend res.json(data);
 iabbrev testelse } else {<CR>res.render('<C-o>T<
 " testing test
 iabbrev testget data = JSON.parse(res.text);
-iabbrev testitget it('should', (done) => {<CR>user<CR>.get('')<CR>.expect(200)<CR>.end((err, res) => {<CR>data = JSON.parse(res.text);<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>7kA<BS><BS><ESC>2kf'i <C-o>T<
+iabbrev testitget it('should', () => {<CR>user<CR>.get('')<CR>.expect(200)<CR>.then((res) => {<CR>const data = JSON.parse(res.text);<CR>});<CR>});<ESC>5kA<BS><BS><ESC>2kf'i <C-o>T<
 " iabbrev testitpost it('should', (done) => {<CR>user<CR>.post('')<CR>.expect(200)<CR>.end((err, res) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>6kA<BS><BS><ESC>2kf'i <C-o>T<
-iabbrev testitpost it('should', (done) => {<CR>user<CR>.post('')<CR>.expect(302)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>6kA<BS><BS><ESC>2kf'i <C-o>T<
+iabbrev testitpost it('should', () => {<CR>user<CR>.post('')<CR>.expect(201)<CR>.then((res) => {<CR>});<CR>});<ESC>4kA<BS><BS><ESC>2kf'i <C-o>T<
 iabbrev testdescribe describe('', () => {<CR><CR><CR><CR><CR><CR>});<ESC>6kf'awhen <C-o>T<
 iabbrev teststart const app     = require('../app'),<CR>request = require('supertest'),<CR>should  = require('should'),<CR>chalk   = require('chalk'),<CR>user    = request.agent(app);<CR>let data;<CR><CR>describe('', () => {<CR><CR><CR>});<ESC>3kf'awhen <C-o>T<
 iabbrev testinit it('should create an admin account and return 200', (done) => {<CR>request(app)<CR>.get('/init')<CR>.expect(200)<CR>.end((err) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<CR>
@@ -245,11 +258,9 @@ iabbrev testlogin it('should login the user and return 302', (done) => {<CR>user
 iabbrev testlogout it('should logout the user and return 302', (done) => {<CR>user<CR>.get('/logout')<CR>.expect(302)<CR>.end((err, res) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});
 iabbrev testclean it('should clean up the database', (done) => {<CR>request(app)<CR>.get('/clean')<CR>.expect(200)<CR>.end((err, res) => {<CR>if(err){ done(err); return; }<CR>done();<CR>});<CR>});<ESC>
 
-iabbrev loggg if(process.env.NODE_ENV != 'testing'){<CR>r.post('http://localhost:65535/log').form({<CR>userID  : req.user.id,<CR>message : ``,<CR>action  : '',<CR>onWhat  : '',<CR>whatID  : id,<CR>error   : false<CR>});<CR>}<ESC>6k3wa<C-o>T<
-iabbrev logggerr if(process.env.NODE_ENV != 'testing'){<CR>r.post('http://localhost:65535/log').form({<CR>userID  : req.user.id,<CR>message : ``,<CR>action  : '',<CR>onWhat  : '',<CR>whatID  : id,<CR>error   : true<CR>});<CR>}<ESC>6k3wa<C-o>T<
-iabbrev logggmacro /r\/<80>kb.post^Mjjyykkk$%a else {^M}^[koconsole.log(chalk.green(^[pkJdwdwdwA<80>kb<80>kb^@));^[
-
 iabbrev llorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+iabbrev jallard console.log('\n🦆\n');
+iabbrev mjallard console.log('\n🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆\n')
 
 
 iabbrev kvesve Kveðja,<CR>Svenni Dal<CR><CR>svennidal@jokula.is<CR>+3548231066
