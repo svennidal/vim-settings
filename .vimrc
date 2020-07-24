@@ -16,9 +16,11 @@ set tabstop=2 softtabstop=2 shiftwidth=2
 
 
 
+"set noexpandtab
 "THIS IS NOLY FOR PONTUS
-set expandtab
-"
+"set expandtab
+" bolding for markdown
+"set conceallevel=2
 
 
 
@@ -213,7 +215,7 @@ iabbrev ddcb console.log(chalk.blue());<Left><Left><Left><C-o>T<
 iabbrev ddcm console.log(chalk.magenta());<Left><Left><Left><C-o>T<
 iabbrev ddcc console.log(chalk.cyan());<Left><Left><Left><C-o>T<
 iabbrev ddcy console.log(chalk.yellow());<Left><Left><Left><C-o>T<
-iabbrev ddcc console.log(chalk.yellow());<Left><Left><Left><C-o>T<
+iabbrev ddcc console.log(chalk.cyan());<Left><Left><Left><C-o>T<
 iabbrev dddata console.log(chalk.yellow(JSON.stringify(, null, 2)));<Esc>5ba<C-o>T<
 iabbrev cddata const chalk = require('chalk');<CR>console.log(chalk.yellow(JSON.stringify(, null, 2)));<Esc>5ba<C-o>T<
 " common stuff
@@ -267,12 +269,16 @@ iabbrev kvesve Kveðja,<CR>Svenni Dal<CR><CR>svennidal@jokula.is<CR>+3548231066
 
 iabbrev livereloadjs script(src='http://localhost:35729/livereload.js')
 iabbrev htmlsimple <html><CR><head><CR></head><CR><body><CR></body><CR></html><ESC>gg
+iabbrev ddoctype <!DOCTYPE HTML>
+iabbrev ccharset <meta charset='utf-8'>
+iabbrev iinitialscale <meta name="viewport" content="width=device-width, initial-scale=1.0">
+iabbrev vviewport <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 " PHP ABS
 iabbrev fwriteout fwrite(STDOUT, print_r(, TRUE));<Left><Left><Left><Left><Left><Left><Left><Left><Left><C-o>T<
 iabbrev fwriteerr fwrite(STDERR, print_r(, TRUE));<Left><Left><Left><Left><Left><Left><Left><Left><Left><C-o>T<
 
-" I keep closing tabs accidentally. Now use :x or :w followed by :q
+" I keep closing tabs accidentally. Now use :x or :w followed by :q or ZZ
 cabbrev wq w
 
 " nmap zz zz20<C-e>
@@ -299,6 +305,8 @@ nnoremap <tab> gt
 nnoremap <s-tab> gT
 nmap K <Plug>(devdocs-under-cursor)
 map <C-n> :NERDTreeToggle<CR>
-hi Normal guibg=NONE ctermbg=NONE
+
+"THIS IS NOLY FOR PONTUS
+"hi Normal guibg=NONE ctermbg=NONE
 
 set secure
