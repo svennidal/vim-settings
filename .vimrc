@@ -1,7 +1,7 @@
 set exrc
 set nocompatible "no idea
+"
 " FOLDS
-" set nofoldenable "no idea
 set foldmethod=indent
 set foldnestmax=2
 set foldlevelstart=2
@@ -10,7 +10,7 @@ let g:netrw_liststyle = 3
 
 set backspace=2	 "for correct backspace behaviour
 filetype plugin indent on
-set autoindent "everything else is crazy
+set autoindent
 set tabstop=2 softtabstop=2 shiftwidth=2
 
 
@@ -36,7 +36,6 @@ set ttymouse=sgr "enable mouse when in tmux
 set ttyfast "an attempt to speed up scrolling 
 set splitbelow splitright "else it splits above and to the left.
 
-" Colors and stuff. This is inspired by Spacegray --------------------
 " t_Co=256 to get all the colors in the terminal. Else can fail if screen tmux
 set t_Co=256
 
@@ -101,6 +100,7 @@ endfunction
 
 
 syntax match Lambda /=>/ contained
+
 " else all text pops one space to the right when adding the 100th line. I try
 " not to have more than 1000 lines in a file. But jumping letters at that
 " moment would not be favorable
@@ -108,6 +108,7 @@ set numberwidth=4
 
 syntax on "the initial biggest diffirence from TextEdit
 set background=dark "until we start to switch daytime/nighttime themes
+
 " a corsair to locate the cursor. The 81th character turns magenta
 set cursorline cursorcolumn colorcolumn=81 
 hi Lambda          ctermbg=NONE ctermfg=87 cterm=NONE
@@ -118,6 +119,7 @@ hi ColorColumn     ctermbg=233  ctermfg=magenta   cterm=NONE
 hi link javaScriptTemplateDelim String
 hi link javaScriptTemplateVar Text
 hi link javaScriptTemplateString String
+
 colorscheme spacegray
 
 
@@ -174,32 +176,23 @@ function SvenniStandard()
 endfunction
 
 " ============================= ABBREVIATIONS ===========================
-" copyright
-abbreviate sdbc // Copyright Svenni Dal - Sveinn Dal Bjornsson -
-abbreviate sdbkc // Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir -
-abbreviate htmlsdbc <!-- Copyright Svenni Dal - Sveinn Dal Bjornsson - -->
-" print("Hello! Yes, this is dog!")
-abbreviate helloc std::cout << "Hello! Yes, this is dog!\n";
 abbreviate hellojs console.log('Hello! Yes, this is dog!');
 
 abbreviate sendbobsjs console.log('\n\n\n\n\n\nS̞̗͈͉̘̊͂̎ͯe̖͚̥̫͕̬͓ͧ̊͛ͦ͛̅̓̍̌ͥ̓̅n̺̠̗̞̬̪͕͓̤ͫ̍̈͑ͮ͛ͫd͕͇̩̠̻̪̪̈́̽͒̀̈́ͮ͌ͥ̄̈́̑ͅ ̽̍̌̏͛ͥ͋ͫ̐͋̎̇ͥ͂̈́̌̃̚̚b̘̩͍̞̜̤͇̞̥̣̭̰ͪ̆ͮ̔ͭͅͅo̙̣̩̦͊̐͒̆̅ͦ̏ͦ̐ͯͨ͑̂̌ͅb͇̘̮͔̱̪͖̞͖̥͍ͨͩ̒͂̔̄͗s̤̥̳͙̏̈̐͛ͧ̍ͥͧ͂ͥ͗̋ ̳̬̻͔̻̤̯̹̖̙̹͚̭̤͔͗̽ͬ͒ạ̦̜͇̪̺̼̻̯͈̙̈́̑ͯ̔ͩn̮̮̫̰̯̎̄͗̓̈̒̎ͯ̓ͣͫͩͣ̋d̞͙̠ͪ͐̃ͣ̿͌͂͂͌͆̊̏̃̿ͩͅ ̟͔̯͚̉͆̐̏v͓͇͕͎͕̪͔͈̪̙̺̘̾͗ͧͮͬ̌ͩa̖̝̝̱͉̼̹̣͖͎̅̓̂̍̑̋ͧ̾g͉͔͍͚̥͖͐̆̊̓̂͌͐̆ͯ̀̃́͗é͖͒̇ͫͩ͑͊ͤ̉̌̽̇̄ͧ͋ͮ͑͋n̮̣͙̩͍̳̦ͨͯ͑ͪͨ̉̌ͤ̉͂̆ͪe̙̟̫͔̰̼͉̘͙̟̮ͧͯ̏͐̅ͬ͗͂\n\n\n\n\n\n\n');
 
 abbreviate gohello fmt.Println("Hello! Yes, this is dog!")
 abbreviate helloj System.out.println("Hello! Yes, this is dog!");
-abbreviate hellos print("Hello! Yes, this is dog!")
-abbreviate hellodog 'Hello! Yes, this is dog!'
+"
 " debug
 abbreviate sdebug /****************************** DEBUG ***********************/
 abbreviate ddebug /*************************** // DEBUG ***********************/
 abbreviate conslcake console.log('        CAKE!!\n                              .,-=;//;-\n                 ,    ,=/+%$XH@MM#@:\n       -$##@+$###@H@MMM#######H:.    -/H#\n .,H@H@ X######@ -H#####@+-     -+H###@x\n  .,@##H;      +XM##M/,     =%@###@X;-\n X%-  :M##########$.    .:%M###@%:\n M##H,   +H@@@$/-.  ,;$M###@%,          -\n M###M=,,---,.-%%H####M$:           ,+@##\n @##################@/.          :%##@$-\n M################H,         ;HM##M$=\n ##################.    .=$M##M$=\n #################H..;XM##M$=         .:+\n M####################@%=          =+@MH%\n @#################M/.         =+H#X%=\n =+M###############M,     -/X#X+;.\n  .;XM###########H=    ,/X#H+:,\n     .=+HM#######M+/+HM@+=.\n          ,:/%XM####H/.\n               ,.:=-.');
 abbreviate conslbcake console.log(chalk.blue('        CAKE!!\n                              .,-=;//;-\n                 ,    ,=/+%$XH@MM#@:\n       -$##@+$###@H@MMM#######H:.    -/H#\n .,H@H@ X######@ -H#####@+-     -+H###@x\n  .,@##H;      +XM##M/,     =%@###@X;-\n X%-  :M##########$.    .:%M###@%:\n M##H,   +H@@@$/-.  ,;$M###@%,          -\n M###M=,,---,.-%%H####M$:           ,+@##\n @##################@/.          :%##@$-\n M################H,         ;HM##M$=\n ##################.    .=$M##M$=\n #################H..;XM##M$=         .:+\n M####################@%=          =+@MH%\n @#################M/.         =+H#X%=\n =+M###############M,     -/X#X+;.\n  .;XM###########H=    ,/X#H+:,\n     .=+HM#######M+/+HM@+=.\n          ,:/%XM####H/.\n               ,.:=-.'));
-abbreviate consljokula console.log('           d8    d8  88    ,ad8888ba,    88      a8P  88        88  88                  db         \n         ,8P\'  ,8P\'  88   d8"\'    `"8b   88    ,88\'   88        88  88                 d88b        \n        d8"   d8"    88  d8\'        `8b  88  ,88"     88        88  88                d8\'`8b       \n      ,8P\'  ,8P\'     88  88          88  88,d88\'      88        88  88               d8\'  `8b      \n     d8"   d8"       88  88          88  8888"88,     88        88  88              d8YaaaaY8b     \n   ,8P\'  ,8P\'        88  Y8,        ,8P  88P   Y8b    88        88  88             d8""""""""8b    \n  d8"   d8"  88,   ,d88   Y8a.    .a8P   88     "88,  Y8a.    .a8P  88            d8\'        `8b   \n 8P\'   8P\'    "Y8888P"     `"Y8888Y"\'    88       Y8b  `"Y8888Y"\'   88888888888  d8\'          `8b');
 iabbrev goprint fmt.Println()<Left><C-o>T<
 " javascript
 iabbrev constchalk const chalk = require('chalk');
 " console logging
 iabbrev consl console.log();<Left><Left><C-o>T<
-iabbrev conss console.say();<Left><Left><C-o>T<
 iabbrev conse console.error();<Left><Left><C-o>T<
 iabbrev seqerr console.error(chalk.green('HINT:', reason.parent.hint));
 iabbrev consll console.log(');<Left><Left><C-o>T<
@@ -214,16 +207,13 @@ iabbrev ddcy console.log(chalk.yellow());<Left><Left><Left><C-o>T<
 iabbrev ddcc console.log(chalk.cyan());<Left><Left><Left><C-o>T<
 iabbrev dddata console.log(chalk.yellow(JSON.stringify(, null, 2)));<Esc>5ba<C-o>T<
 iabbrev cddata const chalk = require('chalk');<CR>console.log(chalk.yellow(JSON.stringify(, null, 2)));<Esc>5ba<C-o>T<
+"
 " common stuff
 iabbrev usestrict 'use strict';
 iabbrev expp exports. = (req, res, next) => {<ESC>0f.a<C-o>T<
 iabbrev ppromise return new Promise((resolve, reject) => {
 iabbrev forl for(let i = 0; i ; i++){<ESC>6hi<C-o>T<
-iabbrev forll for(let i = ; i > 0; i--){<ESC>13hi<C-o>T<
 iabbrev ddata , { data: data });
-iabbrev mongoerr /* istanbul ignore if */<CR>if(err){ console.error('error:', err); }<CR>else {
-iabbrev istanif /* istanbul ignore if */
-iabbrev istanelse /* istanbul ignore else */
 iabbrev routesindex const express = require('express'),<CR>fs = require('fs'),<CR>router = express.Router();<CR><CR>module.exports = (passport) =>{<CR>fs.readdirSync(__dirname).forEach((file) => {<CR>if(file === 'index.js' \|\| file.substr(file.lastIndexOf('.') + 1) !== 'js'){<CR>return;<CR>}<CR>let name = file.substr(0, file.indexOf('.'));<CR>require('./' + name)(router, passport);<CR>});<CR><CR>return router;<CR>};<ESC>
 iabbrev routesroute const isAuthenticated = (req, res, next) =>  {<CR>if (req.isAuthenticated()){ return next(); }<CR>res.redirect('/login');<CR>};<CR><CR>module.exports = (router, passport) =>{<CR>};<ESC>Oconst  = require('../controllers/<ESC>26hi<C-o>T<
 iabbrev modell const mongoose = require('mongoose'),<CR>Schema = mongoose.Schema;<CR><CR>const = new Schema({<CR>});<CR><CR>module.exports = mongoose.model('', );<ESC>3k0ea<SPACE><C-o>T<
@@ -261,8 +251,6 @@ iabbrev jallard console.log('\n🦆\n');
 iabbrev mjallard console.log('\n🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆\n')
 
 
-iabbrev kvesve Kveðja,<CR>Svenni Dal<CR><CR>svennidal@jokula.is<CR>+3548231066
-
 iabbrev livereloadjs script(src='http://localhost:35729/livereload.js')
 iabbrev htmlsimple <html><CR><head><CR></head><CR><body><CR></body><CR></html><ESC>gg
 iabbrev ddoctype <!DOCTYPE HTML>
@@ -281,14 +269,10 @@ cabbrev wq w
 nmap <F2> V$%=
 nmap <F3> :!cat %<CR>
 nmap <F4> ggVGg?
-nmap <F5> :!jshint %<CR>
-" nmap <F6> !!date<CR>i// Copyright Svenni Dal - Sveinn Dal Bjornsson & Karitas Olafsdottir - <ESC>o<BS><BS><BS><ESC>
-nmap <F6> :!/Users/svennidal/bin/cow.sh <CR>
 nmap <F7> :!node %<CR>
 nmap <F8> :!cat % \| pbcopy <CR>
 nmap <F9> :!pandoc -s -o index.html % && open index.html <CR>
 nmap <F10> :!open %<CR>
-nmap <F12> !!date<CR>i// Copyright 2018, Svenni Dal(Sveinn Dal Bjornsson) & //JÖKULÁ, All rights reserved <ESC>o<BS><BS><BS>'use strict';<CR><ESC>
 
 imap <c-j> `
 
@@ -302,7 +286,5 @@ nnoremap <s-tab> gT
 nmap K <Plug>(devdocs-under-cursor)
 map <C-n> :NERDTreeToggle<CR>
 
-"THIS IS NOLY FOR PONTUS
-"hi Normal guibg=NONE ctermbg=NONE
 
 set secure
