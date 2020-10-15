@@ -136,13 +136,7 @@ au BufNewFile,BufRead,BufWinEnter *.go syn match Commento /\/\*\*.*\*\// | syn m
 au BufNewFile,BufRead,BufWinEnter *.ex syn match Commento /\/\*\*.*\*\// | syn match Lambda /=>/
 au BufNewFile,BufRead,BufWinEnter *.exs syn match Commento /\/\*\*.*\*\// | syn match Lambda /=>/
 au BufNewFile,BufRead,BufWinEnter *.php syn match Commento /\/\*\*.*\*\// | syn match Lambda /=>/ | set colorcolumn=121
-" au BufNewFile,BufRead,BufWinEnter *.js match Commento /\/\*\*.*\*\// 
-" au BufNewFile,BufRead,BufWinEnter *.js match Lambda /=>/
-" This is for the less syntax highlighting
-" au BufNewFile,BufRead *.less set filetype=css
 
-" This is for the pug syntax highlighting and indent width
-" This is for the jade syntax highlighting and indent width
 autocmd BufRead,BufNewFile *.jade set filetype=jade
 autocmd Filetype jade setlocal ts=2 sts=2 sw=2 autoindent nofoldenable
 autocmd BufRead,BufNewFile *.vue set filetype=vue
@@ -168,6 +162,8 @@ autocmd BufRead,BufNewFile *.php set filetype=php
 autocmd Filetype php setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd BufRead,BufNewFile *.twig set filetype=twig
 autocmd Filetype twig setlocal tabstop=4 shiftwidth=4 expandtab
+
+autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
 
 au BufEnter * setl backupcopy=yes
 
