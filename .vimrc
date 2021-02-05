@@ -190,6 +190,14 @@ iabbrev reqb req.body.<C-o>T<
 iabbrev reqp req.params.<C-o>T<
 iabbrev reqf req.files.<C-o>T<
 
+" print colors in go
+iabbrev printfred fmt.Printf("\033[31m\033[0m\n")<ESC>10hi<C-o>T<
+iabbrev printfgreen fmt.Printf("\033[32m\033[0m\n")<ESC>10hi<C-o>T<
+iabbrev printfyellow fmt.Printf("\033[33m\033[0m\n")<ESC>10hi<C-o>T<
+iabbrev printfblue fmt.Printf("\033[34m\033[0m\n")<ESC>10hi<C-o>T<
+iabbrev printfpurple fmt.Printf("\033[35m\033[0m\n")<ESC>10hi<C-o>T<
+iabbrev printfcyan fmt.Printf("\033[36m\033[0m\n")<ESC>10hi<C-o>T<
+
 
 iabbrev llorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 iabbrev jallard console.log('\n🦆\n');
@@ -201,6 +209,8 @@ iabbrev ddoctype <!DOCTYPE HTML>
 iabbrev ccharset <meta charset='utf-8'>
 iabbrev iinitialscale <meta name="viewport" content="width=device-width, initial-scale=1.0">
 iabbrev vviewport <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+iabbrev goprintjson func prettyPrint(d data) {<CR>dJSON, err := json.MarshalIndent(d, "", "  ")<CR>if err != nil {<CR>log.Fatalf(err.Error())<CR>}<CR>fmt.Printf("\033[36mMarshalIndent funnction output \033[0m \033[33m%s\033[0m\n", string(dJSON))<CR>fmt.Printf("\033[33m\033[0m\n")<CR>}
 
 " I keep closing tabs accidentally. Now use :x or :w followed by :q or ZZ
 cabbrev wq w
