@@ -219,11 +219,12 @@ cabbrev wq w
 nmap <F2> V$%=
 nmap <F3> :!cat %<CR>
 nmap <F4> ggVGg?
+nmap <F5> :!cat % \| pbcopy<CR><CR>
 nmap <F7> :GoImport 
 nmap <F8> :GoImport <C-r><C-w>
 nmap <F9> :!pandoc -s -o index.html % && open index.html <CR>
 nmap <F10> :!open %<CR>
-nmap <11> :!cat % \| pbcopy <CR>
+nmap <12> :!cat % \| pbcopy <CR>
 
 imap <c-j> `
 
