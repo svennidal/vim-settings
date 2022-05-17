@@ -162,7 +162,7 @@ autocmd BufRead,BufNewFile *.mkd set filetype=markdown
 autocmd Filetype markdown setlocal ts=2 sts=2 sw=2 nofoldenable
 
 autocmd BufRead,BufNewFile *.php set filetype=php
-autocmd Filetype php setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd Filetype php setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd BufRead,BufNewFile *.twig set filetype=twig
 autocmd Filetype twig setlocal tabstop=4 shiftwidth=4 expandtab
 
@@ -174,6 +174,11 @@ au BufEnter * setl backupcopy=yes
 function SvenniStandard()
 	%s/    /\t/g
 	%s/  /\t/g
+endfunction
+
+function Slafu()
+	%s/{/[/g
+	%s/}/]/g
 endfunction
 
 " ============================= ABBREVIATIONS ===========================
@@ -203,6 +208,10 @@ iabbrev printfcyan fmt.Printf("\033[36m\033[0m\n")<ESC>10hi<C-o>T<
 
 
 iabbrev llorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+iabbrev bbananas 🍌🍌<C-o>T<
+iabbrev ppoop 💩<C-o>T<
+
 iabbrev jallard console.log('\n🦆\n');
 iabbrev mjallard console.log('\n🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆\n')
 
@@ -213,7 +222,7 @@ iabbrev ccharset <meta charset='utf-8'>
 iabbrev iinitialscale <meta name="viewport" content="width=device-width, initial-scale=1.0">
 iabbrev vviewport <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-iabbrev goprintjson func prettyPrint(d data) {<CR>dJSON, err := json.MarshalIndent(d, "", "  ")<CR>if err != nil {<CR>log.Fatalf(err.Error())<CR>}<CR>fmt.Printf("\033[36mMarshalIndent funnction output \033[0m \033[33m%s\033[0m\n", string(dJSON))<CR>fmt.Printf("\033[33m\033[0m\n")<CR>}
+iabbrev goprintjson func prettyPrint(d interface{}) {<CR>dJSON, err := json.MarshalIndent(d, "", "  ")<CR>if err != nil {<CR>log.Fatalf(err.Error())<CR>}<CR>fmt.Printf("\033[36mMarshalIndent funnction output \033[0m \033[33m%s\033[0m\n", string(dJSON))<CR>fmt.Printf("\033[33m\033[0m\n")<CR>}
 
 " I keep closing tabs accidentally. Now use :x or :w followed by :q or ZZ
 cabbrev wq w
