@@ -3,7 +3,8 @@
 hi Lambda          ctermbg=NONE ctermfg=87 cterm=NONE
 hi Normal          ctermbg=233  ctermfg=NONE    cterm=NONE
 
-hi Comment         ctermbg=NONE ctermfg=59     cterm=NONE
+"hi Comment         ctermbg=NONE ctermfg=59     cterm=NONE
+hi Comment         ctermbg=NONE ctermfg=103    cterm=NONE
 hi NonText         ctermbg=NONE ctermfg=8      cterm=NONE
 hi Title           ctermbg=NONE ctermfg=231    cterm=NONE
 

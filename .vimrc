@@ -13,6 +13,7 @@ filetype plugin indent on
 set autoindent
 set tabstop=2 softtabstop=2 shiftwidth=2
 
+set wmnu
 
 
 
@@ -31,7 +32,7 @@ set ruler "compiler warnings often give column number, this is cool for that
 set encoding=utf-8 fileencoding=utf-8 "icelandic letters and stuff
 " mouse stuff
 set mouse=a "enable mouse
-set ttymouse=sgr "enable mouse when in tmux
+"set ttymouse=sgr "enable mouse when in tmux
 
 set ttyfast "an attempt to speed up scrolling 
 set splitbelow splitright "else it splits above and to the left.
@@ -177,6 +178,8 @@ endfunction
 
 " ============================= ABBREVIATIONS ===========================
 abbreviate hellojs console.log('Hello! Yes, this is dog!');
+
+abbreviate hellocpp #include <iostream><CR>using namespace std;<CR><CR>int main(int argc, char *argv[]){<CR>cout << "hello" << endl;<CR><CR>return 0;<CR>}<CR><ESC><C-o>T<gg
 
 
 iabbrev consl console.log();<Left><Left><C-o>T<
