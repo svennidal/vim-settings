@@ -223,6 +223,7 @@ iabbrev iinitialscale <meta name="viewport" content="width=device-width, initial
 iabbrev vviewport <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 iabbrev goprintjson func prettyPrint(d interface{}) {<CR>dJSON, err := json.MarshalIndent(d, "", "  ")<CR>if err != nil {<CR>log.Fatalf(err.Error())<CR>}<CR>fmt.Printf("\033[36mMarshalIndent funnction output \033[0m \033[33m%s\033[0m\n", string(dJSON))<CR>fmt.Printf("\033[33m\033[0m\n")<CR>}
+iabbrev prp prettyPrint()<ESC>i<C-o>T<
 
 " I keep closing tabs accidentally. Now use :x or :w followed by :q or ZZ
 cabbrev wq w
