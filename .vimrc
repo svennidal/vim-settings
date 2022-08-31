@@ -182,29 +182,45 @@ function Slafu()
 endfunction
 
 " ============================= ABBREVIATIONS ===========================
-abbreviate hellojs console.log('Hello! Yes, this is dog!');
 
 abbreviate hellocpp #include <iostream><CR>using namespace std;<CR><CR>int main(int argc, char *argv[]){<CR>cout << "hello" << endl;<CR><CR>return 0;<CR>}<CR><ESC><C-o>T<gg
 
 
-iabbrev consl console.log();<Left><Left><C-o>T<
-iabbrev conse console.error();<Left><Left><C-o>T<
-"
-" common stuff
+" javascript
+" common nodejs stuff
 iabbrev expp exports. = (req, res, next) => {<ESC>0f.a<C-o>T<
 iabbrev ppromise return new Promise((resolve, reject) => {
 iabbrev forl for(let i = 0; i ; i++){<ESC>6hi<C-o>T<
 iabbrev reqb req.body.<C-o>T<
 iabbrev reqp req.params.<C-o>T<
 iabbrev reqf req.files.<C-o>T<
+abbreviate hellojs console.log('Hello! Yes, this is dog!');
+iabbrev consl console.log();<Left><Left><C-o>T<
+iabbrev conse console.error();<Left><Left><C-o>T<
+iabbrev jallard console.log('\n🦆\n');
+iabbrev mjallard console.log('\n🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆\n')
 
-" print colors in go
+" go
 iabbrev printfred fmt.Printf("\033[31m\033[0m\n")<ESC>10hi<C-o>T<
 iabbrev printfgreen fmt.Printf("\033[32m\033[0m\n")<ESC>10hi<C-o>T<
 iabbrev printfyellow fmt.Printf("\033[33m\033[0m\n")<ESC>10hi<C-o>T<
 iabbrev printfblue fmt.Printf("\033[34m\033[0m\n")<ESC>10hi<C-o>T<
 iabbrev printfpurple fmt.Printf("\033[35m\033[0m\n")<ESC>10hi<C-o>T<
 iabbrev printfcyan fmt.Printf("\033[36m\033[0m\n")<ESC>10hi<C-o>T<
+iabbrev goprintjson func prettyPrint(d interface{}) {<CR>dJSON, err := json.MarshalIndent(d, "", "  ")<CR>if err != nil {<CR>log.Fatalf(err.Error())<CR>}<CR>fmt.Printf("\033[36mMarshalIndent funnction output \033[0m \033[33m%s\033[0m\n", string(dJSON))<CR>fmt.Printf("\033[33m\033[0m\n")<CR>}
+iabbrev prp prettyPrint()<ESC>i<C-o>T<
+iabbrev functest func Test(t *testing.T) {<ESC>15hi<C-o>T<
+iabbrev trun t.Run("", func(t *testing.T) {<ESC>22hi<C-o>T<
+
+" html
+iabbrev htmlsimple <html><CR><head><CR></head><CR><body><CR></body><CR></html><ESC>gg
+iabbrev ddoctype <!DOCTYPE HTML>
+iabbrev ccharset <meta charset='utf-8'>
+iabbrev iinitialscale <meta name="viewport" content="width=device-width, initial-scale=1.0">
+iabbrev vviewport <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+" php
+iabbrev plog \Log::debug();<ESC>2hi<C-o>T<
 
 
 iabbrev llorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -212,18 +228,7 @@ iabbrev llorem Lorem Ipsum is simply dummy text of the printing and typesetting 
 iabbrev bbananas 🍌🍌<C-o>T<
 iabbrev ppoop 💩<C-o>T<
 
-iabbrev jallard console.log('\n🦆\n');
-iabbrev mjallard console.log('\n🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆\n')
 
-
-iabbrev htmlsimple <html><CR><head><CR></head><CR><body><CR></body><CR></html><ESC>gg
-iabbrev ddoctype <!DOCTYPE HTML>
-iabbrev ccharset <meta charset='utf-8'>
-iabbrev iinitialscale <meta name="viewport" content="width=device-width, initial-scale=1.0">
-iabbrev vviewport <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-iabbrev goprintjson func prettyPrint(d interface{}) {<CR>dJSON, err := json.MarshalIndent(d, "", "  ")<CR>if err != nil {<CR>log.Fatalf(err.Error())<CR>}<CR>fmt.Printf("\033[36mMarshalIndent funnction output \033[0m \033[33m%s\033[0m\n", string(dJSON))<CR>fmt.Printf("\033[33m\033[0m\n")<CR>}
-iabbrev prp prettyPrint()<ESC>i<C-o>T<
 
 " I keep closing tabs accidentally. Now use :x or :w followed by :q or ZZ
 cabbrev wq w
