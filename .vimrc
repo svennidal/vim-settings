@@ -6,6 +6,7 @@ set foldmethod=indent
 set foldnestmax=2
 set foldlevelstart=2
 
+" Nerdtree list style = tree
 let g:netrw_liststyle = 3
 
 set backspace=2	 "for correct backspace behaviour
@@ -13,6 +14,7 @@ filetype plugin indent on
 set autoindent
 set tabstop=2 softtabstop=2 shiftwidth=2
 
+" wild menu in the status bar
 set wmnu
 
 
@@ -207,10 +209,12 @@ iabbrev printfyellow fmt.Printf("\033[33m\033[0m\n")<ESC>10hi<C-o>T<
 iabbrev printfblue fmt.Printf("\033[34m\033[0m\n")<ESC>10hi<C-o>T<
 iabbrev printfpurple fmt.Printf("\033[35m\033[0m\n")<ESC>10hi<C-o>T<
 iabbrev printfcyan fmt.Printf("\033[36m\033[0m\n")<ESC>10hi<C-o>T<
-iabbrev goprintjson func prettyPrint(d interface{}) {<CR>dJSON, err := json.MarshalIndent(d, "", "  ")<CR>if err != nil {<CR>log.Fatalf(err.Error())<CR>}<CR>fmt.Printf("\033[36mMarshalIndent funnction output \033[0m \033[33m%s\033[0m\n", string(dJSON))<CR>fmt.Printf("\033[33m\033[0m\n")<CR>}
-iabbrev prp prettyPrint()<ESC>i<C-o>T<
+iabbrev goprintjson func pretty_print(d interface{}) {<CR>dJSON, err := json.MarshalIndent(d, "", "  ")<CR>if err != nil {<CR>log.Fatalf(err.Error())<CR>}<CR>fmt.Printf("\033[36mMarshalIndent funnction output \033[0m \033[33m%s\033[0m\n", string(dJSON))<CR>fmt.Printf("\033[33m\033[0m\n")<CR>}
+iabbrev goclear fmt.Print("\033[H\033[2J")
+iabbrev prp pretty_print()<ESC>i<C-o>T<
 iabbrev functest func Test(t *testing.T) {<ESC>15hi<C-o>T<
 iabbrev trun t.Run("", func(t *testing.T) {<ESC>22hi<C-o>T<
+iabbrev ppprof pprofFile, pprofErr := os.Create("cpu.pprof")<CR>if pprofErr != nil {<CR><CR>log.Fatal(pprofErr)<CR>}<CR><CR>pprof.StartCPUProfile(pprofFile)<CR>defer pprof.StopCPUProfile()<CR>// insert top of main and run: go tool pprof -http=":8000" ./<app name> ./cpu.pprof
 
 " html
 iabbrev htmlsimple <html><CR><head><CR></head><CR><body><CR></body><CR></html><ESC>gg
@@ -221,6 +225,7 @@ iabbrev vviewport <meta name="viewport" content="width=device-width, initial-sca
 
 " php
 iabbrev plog \Log::debug();<ESC>hi<C-o>T<
+iabbrev pjson json_encode(, JSON_PRETTY_PRINT)<ESC>19hi<C-o>T<
 
 
 iabbrev llorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
