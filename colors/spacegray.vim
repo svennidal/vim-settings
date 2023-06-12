@@ -4,7 +4,7 @@ hi Lambda          ctermbg=NONE ctermfg=87 cterm=NONE
 hi Normal          ctermbg=233  ctermfg=NONE    cterm=NONE
 
 "hi Comment         ctermbg=NONE ctermfg=59     cterm=NONE
-hi Comment         ctermbg=NONE ctermfg=103    cterm=NONE
+hi Comment         ctermbg=NONE ctermfg=246    cterm=NONE
 hi NonText         ctermbg=NONE ctermfg=8      cterm=NONE
 hi Title           ctermbg=NONE ctermfg=231    cterm=NONE
 
@@ -12,7 +12,7 @@ hi Constant        ctermbg=NONE ctermfg=9      cterm=NONE
 hi Function        ctermbg=NONE ctermfg=9      cterm=NONE
 hi Identifier      ctermbg=NONE ctermfg=3      cterm=NONE
 hi PreProc         ctermbg=NONE ctermfg=109    cterm=NONE
-hi Special         ctermbg=NONE ctermfg=103    cterm=NONE
+hi Special         ctermbg=NONE ctermfg=44    cterm=NONE
 hi SpecialKey      ctermbg=NONE ctermfg=59     cterm=NONE
 hi Statement       ctermbg=NONE ctermfg=13     cterm=NONE
 hi String          ctermbg=NONE ctermfg=10     cterm=NONE

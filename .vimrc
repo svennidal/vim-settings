@@ -114,9 +114,12 @@ set background=dark "until we start to switch daytime/nighttime themes
 
 " a corsair to locate the cursor. The 81th character turns magenta
 set cursorline cursorcolumn colorcolumn=81 
-hi Lambda          ctermbg=NONE ctermfg=87 cterm=NONE
-hi Commento          ctermbg=NONE ctermfg=141 cterm=NONE
-hi ColorColumn     ctermbg=233  ctermfg=magenta   cterm=NONE
+
+" custom colors
+"" => functions
+hi Lambda ctermbg=NONE ctermfg=87 cterm=NONE
+"" the /****************************/ comments
+hi Commento ctermbg=NONE ctermfg=141 cterm=NONE
 
 " Highlight ES6 template strings
 hi link javaScriptTemplateDelim String
@@ -124,7 +127,15 @@ hi link javaScriptTemplateVar Text
 hi link javaScriptTemplateString String
 
 colorscheme spacegray
-
+" Change to color of comments to something readable
+hi Comment ctermfg=152
+" change the background color to be clear/see through
+hi Normal guibg=NONE ctermbg=NONE
+" cursor
+hi CursorLine ctermbg=232  ctermfg=NONE   cterm=NONE
+hi CursorColumn ctermbg=232  ctermfg=NONE   cterm=NONE
+"" color of the character on the colomn column length
+hi ColorColumn ctermbg=234  ctermfg=magenta   cterm=NONE
 
 " to get rid of the sticky color marking on old search
 set incsearch 
@@ -200,9 +211,10 @@ abbreviate hellojs console.log('Hello! Yes, this is dog!');
 iabbrev consl console.log();<Left><Left><C-o>T<
 iabbrev conse console.error();<Left><Left><C-o>T<
 iabbrev jallard console.log('\n🦆\n');
-iabbrev mjallard console.log('\n🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆\n')
+iabbrev mjallard console.log('\n🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆\n');
 
 " go
+iabbrev gallard println("🦆");
 iabbrev printfred fmt.Printf("\033[31m\033[0m\n")<ESC>10hi<C-o>T<
 iabbrev printfgreen fmt.Printf("\033[32m\033[0m\n")<ESC>10hi<C-o>T<
 iabbrev printfyellow fmt.Printf("\033[33m\033[0m\n")<ESC>10hi<C-o>T<
@@ -233,17 +245,20 @@ iabbrev llorem Lorem Ipsum is simply dummy text of the printing and typesetting 
 iabbrev bbananas 🍌🍌<C-o>T<
 iabbrev ppoop 💩<C-o>T<
 
+" React Native
+iabbrev appmounted useEffect(() => {<CR>console.info('App mounted.', (new Date(Date.now()).toISOString()));<CR>}, []);<CR>
+
 
 
 " I keep closing tabs accidentally. Now use :x or :w followed by :q or ZZ
 cabbrev wq w
 
 " nmap zz zz20<C-e>
-nmap <F2> V$%=
+nmap <F2> :set list!<CR>
 nmap <F3> :!cat %<CR>
 nmap <F4> ggVGg?
-nmap <F5> :set list<CR>
-nmap <F6> :set list!<CR>
+nmap <F5> :%s/:/ : /g \| %s/{/{\r/g \| %s/}/\r}/g \| %s/,/,\r/g<CR>gg=G
+nmap <F6> :%s/ //g \| %s/{\n/\{/g \| %s/,\n/,/g \| %s/\t//g \| %s/\n}/\}/g<CR>gg=G
 nmap <F7> :GoImport 
 nmap <F8> :GoImport <C-r><C-w>
 nmap <F9> :!pandoc -s -o index.html % && open index.html <CR>
