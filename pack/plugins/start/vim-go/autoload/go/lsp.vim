@@ -1311,49 +1311,63 @@ function! s:exit(restart) abort
 endfunction
 
 let s:log = []
+let s:logtimer = 0
 function! s:debugasync(timer) abort
+  let s:logtimer = 0
+
   if !go#util#HasDebug('lsp')
     let s:log = []
     return
   endif
 
-  let l:winid = win_getid()
-
-  let l:name = '__GOLSP_LOG__'
-  let l:log_winid = bufwinid(l:name)
-  if l:log_winid == -1
-    silent keepalt botright 10new
-    silent file `='__GOLSP_LOG__'`
-    setlocal buftype=nofile bufhidden=wipe nomodified nobuflisted noswapfile nowrap nonumber nocursorline
-    setlocal filetype=golsplog
-  else
-    call win_gotoid(l:log_winid)
-  endif
-
   try
-    setlocal modifiable
-    for [l:event, l:data] in s:log
-      call remove(s:log, 0)
-      if getline(1) == ''
-        call setline('$', printf('===== %s =====', l:event))
-      else
-        call append('$', printf('===== %s =====', l:event))
-      endif
-      call append('$', split(l:data, "\r\n"))
-    endfor
-    normal! G
-    setlocal nomodifiable
+    let l:winid = win_getid()
+
+    let l:name = '__GOLSP_LOG__'
+    let l:log_winid = bufwinid(l:name)
+    if l:log_winid == -1
+      silent keepalt botright 10new
+      silent file `='__GOLSP_LOG__'`
+      setlocal buftype=nofile bufhidden=wipe nomodified nobuflisted noswapfile nowrap nonumber nocursorline
+      setlocal filetype=golsplog
+    else
+      call win_gotoid(l:log_winid)
+    endif
+
+    try
+      setlocal modifiable
+      for [l:event, l:data] in s:log
+        call remove(s:log, 0)
+        if getline(1) == ''
+          call setline('$', printf('===== %s =====', l:event))
+        else
+          call append('$', printf('===== %s =====', l:event))
+        endif
+        call append('$', split(l:data, "\r\n"))
+      endfor
+      normal! G
+      setlocal nomodifiable
+    finally
+      call win_gotoid(l:winid)
+    endtry
+  catch
+    call go#util#EchoError(v:exception)
   finally
-    call win_gotoid(l:winid)
+    " retry in when there's an exception. This can happen when trying to do
+    " completion, because the window can not be changed while completion is in
+    " progress.
+    if len(s:log) != 0
+      let s:logtimer = timer_start(10, function('s:debugasync', []))
+    endif
   endtry
 endfunction
 
 function! s:debug(event, data) abort
-  let l:shouldStart = len(s:log) == 0
+  let l:shouldStart = s:logtimer is 0
   let s:log = add(s:log, [a:event, a:data])
 
   if l:shouldStart
-    call timer_start(10, function('s:debugasync', []))
+    let s:logtimer = timer_start(10, function('s:debugasync', []))
   endif
 endfunction
 
@@ -1780,10 +1794,6 @@ function! s:handleCodeAction(kind, cmd, msg) abort dict
 
   for l:item in a:msg
     if get(l:item, 'kind', '') is a:kind
-      if !has_key(l:item, 'edit')
-        continue
-      endif
-
       if has_key(l:item, 'disabled') && get(l:item.disabled, 'reason', '') isnot ''
         call go#util#EchoWarning(printf('code action is disabled: %s', l:item.disabled.reason))
         continue
@@ -1794,6 +1804,10 @@ function! s:handleCodeAction(kind, cmd, msg) abort dict
           call s:executeCommand(l:item.command.command, l:item.command.arguments)
           continue
         endif
+      endif
+
+      if !has_key(l:item, 'edit')
+        continue
       endif
 
       if !has_key(l:item.edit, 'documentChanges')

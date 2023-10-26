@@ -175,7 +175,7 @@ autocmd BufRead,BufNewFile *.mkd set filetype=markdown
 autocmd Filetype markdown setlocal ts=2 sts=2 sw=2 nofoldenable
 
 autocmd BufRead,BufNewFile *.php set filetype=php
-autocmd Filetype php setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd Filetype php setlocal tabstop=2 shiftwidth=2
 autocmd BufRead,BufNewFile *.twig set filetype=twig
 autocmd Filetype twig setlocal tabstop=4 shiftwidth=4 expandtab
 
@@ -222,6 +222,7 @@ iabbrev printfblue fmt.Printf("\033[34m\033[0m\n")<ESC>10hi<C-o>T<
 iabbrev printfpurple fmt.Printf("\033[35m\033[0m\n")<ESC>10hi<C-o>T<
 iabbrev printfcyan fmt.Printf("\033[36m\033[0m\n")<ESC>10hi<C-o>T<
 iabbrev goprintjson func pretty_print(d interface{}) {<CR>dJSON, err := json.MarshalIndent(d, "", "  ")<CR>if err != nil {<CR>log.Fatalf(err.Error())<CR>}<CR>fmt.Printf("\033[36mMarshalIndent funnction output \033[0m \033[33m%s\033[0m\n", string(dJSON))<CR>fmt.Printf("\033[33m\033[0m\n")<CR>}
+iabbrev printbodyjson body, err := io.ReadAll(resp.Body)<CR>if err != nil {<CR>panic(err)<CR>}<CR>booty := &bytes.Buffer{}<CR>if err := json.Indent(booty, body, "", "	"); err != nil {<CR>panic(err)<CR>}<CR>fmt.Println(booty.String())<CR>
 iabbrev goclear fmt.Print("\033[H\033[2J")
 iabbrev prp pretty_print()<ESC>i<C-o>T<
 iabbrev functest func Test(t *testing.T) {<ESC>15hi<C-o>T<
