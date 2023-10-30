@@ -212,6 +212,7 @@ iabbrev consl console.log();<Left><Left><C-o>T<
 iabbrev conse console.error();<Left><Left><C-o>T<
 iabbrev jallard console.log('\n🦆\n');
 iabbrev mjallard console.log('\n🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆\n');
+iabbrev nodepause require('child_process').spawnSync("read _ ", {shell: true, stdio: [0, 1, 2]});
 
 " go
 iabbrev gallard println("🦆");
