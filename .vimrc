@@ -226,8 +226,11 @@ iabbrev goprintjson func pretty_print(d interface{}) {<CR>dJSON, err := json.Mar
 iabbrev printbodyjson body, err := io.ReadAll(resp.Body)<CR>if err != nil {<CR>panic(err)<CR>}<CR>booty := &bytes.Buffer{}<CR>if err := json.Indent(booty, body, "", "	"); err != nil {<CR>panic(err)<CR>}<CR>fmt.Println(booty.String())<CR>
 iabbrev goclear fmt.Print("\033[H\033[2J")
 iabbrev prp pretty_print()<ESC>i<C-o>T<
-iabbrev functest func Test(t *testing.T) {<ESC>15hi<C-o>T<
-iabbrev trun t.Run("", func(t *testing.T) {<ESC>22hi<C-o>T<
+"iabbrev functest func Test(t *testing.T) {<ESC>15hi<C-o>T<
+iabbrev functest func Test(t *testing.T) {<CR>}<ESC>0kf(i<C-o>T,
+"iabbrev trun t.Run("", func(t *testing.T) {<ESC>22hi<C-o>T<
+iabbrev trun t.Run("", func(t *testing.T) {<CR>})<ESC>kf"a<C-o>T<
+iabbrev wantgot if !reflect.DeepEqual(want, got) {<CR>t.Errorf("want %+v, got %+v", want, got)<CR>}<C-o>T<
 iabbrev ppprof pprofFile, pprofErr := os.Create("cpu.pprof")<CR>if pprofErr != nil {<CR><CR>log.Fatal(pprofErr)<CR>}<CR><CR>pprof.StartCPUProfile(pprofFile)<CR>defer pprof.StopCPUProfile()<CR>// insert top of main and run: go tool pprof -http=":8000" ./<app name> ./cpu.pprof
 
 " html
