@@ -53,7 +53,6 @@ let s:packages = {
       \ 'gomodifytags':  ['github.com/fatih/gomodifytags@latest'],
       \ 'gorename':      ['golang.org/x/tools/cmd/gorename@master'],
       \ 'gotags':        ['github.com/jstemmer/gotags@master'],
-      \ 'guru':          ['golang.org/x/tools/cmd/guru@master'],
       \ 'impl':          ['github.com/josharian/impl@main'],
       \ 'keyify':        ['honnef.co/go/tools/cmd/keyify@master'],
       \ 'motion':        ['github.com/fatih/motion@latest'],

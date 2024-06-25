@@ -266,10 +266,9 @@ nmap <F4> ggVGg?
 nmap <F5> :%s/:/ : /g \| %s/{/{\r/g \| %s/}/\r}/g \| %s/,/,\r/g<CR>gg=G
 nmap <F6> :%s/ //g \| %s/{\n/\{/g \| %s/,\n/,/g \| %s/\t//g \| %s/\n}/\}/g<CR>gg=G
 nmap <F7> :GoImport 
-nmap <F8> :GoImport <C-r><C-w>
+nmap <F8> :!cat % \| pbcopy <CR><CR>
 nmap <F9> :!pandoc -s -o index.html % && open index.html <CR>
 nmap <F10> :!open %<CR>
-nmap <12> :!cat % \| pbcopy <CR>
 
 imap <c-j> `
 
